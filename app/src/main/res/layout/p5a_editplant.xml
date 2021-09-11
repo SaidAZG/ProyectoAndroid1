@@ -7,7 +7,7 @@
     android:background="#E5E5E5">
 
     <Button
-        android:id="@+id/id_btnadd"
+        android:id="@+id/btnadd"
         android:layout_width="215dp"
         android:layout_height="47dp"
         android:layout_marginBottom="32dp"
@@ -91,7 +91,7 @@
         android:layout_width="305dp"
         android:layout_height="53dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/id_btnadd"
+        app:layout_constraintBottom_toTopOf="@+id/btnadd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout5"

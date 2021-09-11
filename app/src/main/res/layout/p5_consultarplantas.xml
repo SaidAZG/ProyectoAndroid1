@@ -24,7 +24,7 @@ Data Binding, ambos xmlns se adjuntan debajo de la etiqueta layout-->
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="1dp"
                 android:layout_marginLeft="32dp"
-                app:cardBackgroundColor="#89C78D"
+                app:cardBackgroundColor="@color/iconsTint"
                 app:cardCornerRadius="260dp">
 
                 <androidx.cardview.widget.CardView
@@ -57,12 +57,12 @@ Data Binding, ambos xmlns se adjuntan debajo de la etiqueta layout-->
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="20dp"
-            android:ems="10"
+            android:layout_marginTop="8dp"
             android:drawableEnd="@android:drawable/ic_menu_search"
-            android:imeOptions="actionSearch"
             android:drawableTint="@color/black"
+            android:ems="10"
             android:hint="Busca una planta"
+            android:imeOptions="actionSearch"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"

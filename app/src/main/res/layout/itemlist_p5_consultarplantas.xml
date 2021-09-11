@@ -17,8 +17,8 @@
 
         <ImageView
             android:id="@+id/plantPicture"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:scaleType="center"
             tools:srcCompat="@tools:sample/avatars" />
     </androidx.cardview.widget.CardView>
@@ -29,9 +29,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/montserrat_bold"
         android:text="Nombre Planta"
-        android:textSize="25dp"
+        android:textColor="@color/plantName"
+        android:textSize="20dp"
         app:layout_constraintStart_toEndOf="@+id/cardView"
         app:layout_constraintTop_toTopOf="@+id/cardView" />
 
@@ -41,8 +42,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="8dp"
-        android:fontFamily="sans-serif-light"
+        android:fontFamily="@font/montserrat"
         android:text="Ver Mas"
+        android:textColor="@color/seeMore"
         app:layout_constraintBottom_toBottomOf="@+id/cardView"
         app:layout_constraintStart_toStartOf="@+id/TV_PlantName" />
 
@@ -50,7 +52,7 @@
         android:id="@+id/IB_Edit"
         android:layout_width="30dp"
         android:layout_height="40dp"
-        android:backgroundTint="#00000000"
+        android:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/TV_More"
         app:layout_constraintEnd_toStartOf="@+id/IB_Delete"
         app:layout_constraintTop_toTopOf="@+id/IB_Delete"
@@ -60,7 +62,7 @@
         android:id="@+id/IB_Delete"
         android:layout_width="30dp"
         android:layout_height="40dp"
-        android:backgroundTint="#00FFFFFF"
+        android:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/TV_More"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_menu_delete" />

@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="plantName">#3A4256</color>
+    <color name="hints">#979797</color>
+    <color name="seeMore">#9CA9C5</color>
+    <color name="userName">#0C1523</color>
+    <color name="plantAttribute">#2B4017</color>
 </resources>

@@ -7,22 +7,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/TV_PlantName2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Nombre Planta"
-        android:textSize="25dp"
-        app:layout_constraintStart_toStartOf="@+id/cardView2"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+        <TextView
+            android:id="@+id/TV_PlantName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Nombre Planta"
+            android:textColor="@color/plantName"
+            android:textSize="25dp"
+            app:layout_constraintStart_toStartOf="@+id/cardView2"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView2"
             android:layout_width="0dp"
-            android:layout_height="250dp"
+            android:layout_height="230dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -59,7 +60,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:text="Atributo"
+                    android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 
                 <TextView
@@ -67,7 +70,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:text="Atributo"
+                    android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 
                 <TextView
@@ -75,7 +80,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:text="Atributo"
+                    android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 
                 <TextView
@@ -83,7 +90,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:text="Atributo"
+                    android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 
                 <TextView
@@ -91,7 +100,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:text="Atributo"
+                    android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 
                 <TextView
@@ -99,7 +110,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:text="Atributo"
+                    android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 
                 <TextView
@@ -107,7 +120,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:text="Atributo"
+                    android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 
                 <TextView
@@ -115,7 +130,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:text="Atributo"
+                    android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 
                 <TextView
@@ -123,7 +140,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:text="Atributo"
+                    android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 
                 <TextView
@@ -131,7 +150,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:text="Atributo"
+                    android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 
                 <TextView
@@ -139,7 +160,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:text="Atributo"
+                    android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 
                 <TextView
@@ -147,7 +170,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:text="Atributo"
+                    android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 
                 <TextView
@@ -155,7 +180,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:text="Atributo"
+                    android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 
                 <TextView
@@ -163,7 +190,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:text="Atributo"
+                    android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
             </LinearLayout>
         </ScrollView>

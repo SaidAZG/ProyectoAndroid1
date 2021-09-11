@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--La etiqueta layout que envuelve al constraint layout sirve para implementar la herramienta
+Data Binding, ambos xmlns se adjuntan debajo de la etiqueta layout-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="1dp"
+                android:layout_marginLeft="32dp"
+                app:cardBackgroundColor="@color/iconsTint"
+                app:cardCornerRadius="260dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="260dp">
+
+                    <ImageView
+                        android:id="@+id/profilePicture"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        tools:srcCompat="@tools:sample/avatars" />
+                </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/welcomeUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="12dp"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/roboto"
+                android:text="Bienvenido @Usuario"
+                android:textColor="@color/userName" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/ET_PlantSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="8dp"
+            android:drawableEnd="@android:drawable/ic_menu_search"
+            android:drawableTint="@color/black"
+            android:ems="10"
+            android:hint="Busca una planta"
+            android:imeOptions="actionSearch"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Todas las Plantas"
+            android:textColor="@color/plantName"
+            app:layout_constraintStart_toStartOf="@+id/ET_PlantSearch"
+            app:layout_constraintTop_toBottomOf="@+id/ET_PlantSearch" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RV_Consults"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/ET_PlantSearch"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:listitem="@layout/itemlist_p5_consultarplantas" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -12,6 +12,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="plantName">#3A4256</color>
     <color name="hints">#979797</color>
+    <color name="loginHint">#B4B6B8</color>
+    <color name="signIn">#0A0909</color>
     <color name="seeMore">#9CA9C5</color>
     <color name="userName">#0C1523</color>
     <color name="plantAttribute">#2B4017</color>

@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/saida/OneDrive/Documentos/GitHub/ProyectoAndroid1/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/saida/OneDrive/Documentos/GitHub/ProyectoAndroid1/app/src/main/res/drawable/border_text.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/saida/OneDrive/Documentos/GitHub/ProyectoAndroid1/app/src/main/res/drawable/button_rounded.xml" value="0.25833333333333336" />
+        <entry key="..\:/Users/saida/OneDrive/Documentos/GitHub/ProyectoAndroid1/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/saida/OneDrive/Documentos/GitHub/ProyectoAndroid1/app/src/main/res/layout/itemlist_p5_consultarplantas.xml" value="0.33" />
+        <entry key="..\:/Users/saida/OneDrive/Documentos/GitHub/ProyectoAndroid1/app/src/main/res/layout/p3a_login.xml" value="0.25" />
+        <entry key="..\:/Users/saida/OneDrive/Documentos/GitHub/ProyectoAndroid1/app/src/main/res/layout/p3b_sign_up.xml" value="0.25" />
         <entry key="..\:/Users/saida/OneDrive/Documentos/GitHub/ProyectoAndroid1/app/src/main/res/layout/p5_consultarplantas.xml" value="0.22" />
         <entry key="..\:/Users/saida/OneDrive/Documentos/GitHub/ProyectoAndroid1/app/src/main/res/layout/p5a_verdetalle.xml" value="0.33" />
         <entry key="..\:/Users/saida/OneDrive/Documentos/GitHub/ProyectoAndroid1/app/src/main/res/layout/p5a_vermas.xml" value="0.33" />

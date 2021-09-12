@@ -13,4 +13,19 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="TextInputs">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="background">@drawable/border_text</item>
+        <item name="android:layout_height">48dp</item>
+    </style>
+    <style name="Headers">
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:textColor">@color/signIn</item>
+    </style>
+    <style name="headerSubtitle">
+        <item name="android:textColor">@color/signIn</item>
+        <item name="fontFamily">@font/inder</item>
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>

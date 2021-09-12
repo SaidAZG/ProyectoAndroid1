@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="363dp"
+        android:layout_height="622dp"
+        android:stateListAnimator="@android:anim/fade_in"
+        app:srcCompat="@drawable/growit_logo"
+        tools:layout_editor_absoluteX="63dp"
+        tools:layout_editor_absoluteY="93dp" />
+</android.support.constraint.ConstraintLayout>

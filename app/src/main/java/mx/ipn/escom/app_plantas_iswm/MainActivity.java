@@ -9,7 +9,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.p5a_editplant);
+        //setContentView(R.layout.p5b_editplant);
         setContentView(R.layout.p6_addplants);
     }
 }

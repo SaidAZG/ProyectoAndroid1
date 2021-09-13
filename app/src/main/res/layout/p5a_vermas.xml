@@ -62,7 +62,7 @@
                     android:layout_marginTop="8dp"
                     android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:drawableTint="@color/iconsTint"
-                    android:text="Atributo"
+                    android:text="Nombre Común"
                     android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 
@@ -73,7 +73,7 @@
                     android:layout_marginTop="8dp"
                     android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:drawableTint="@color/iconsTint"
-                    android:text="Atributo"
+                    android:text="Especie"
                     android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 
@@ -84,7 +84,7 @@
                     android:layout_marginTop="8dp"
                     android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:drawableTint="@color/iconsTint"
-                    android:text="Atributo"
+                    android:text="Dimensiones"
                     android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 
@@ -95,7 +95,7 @@
                     android:layout_marginTop="8dp"
                     android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:drawableTint="@color/iconsTint"
-                    android:text="Atributo"
+                    android:text="Fecha de Plantación"
                     android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 
@@ -106,7 +106,7 @@
                     android:layout_marginTop="8dp"
                     android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:drawableTint="@color/iconsTint"
-                    android:text="Atributo"
+                    android:text="Lugar de Plantación"
                     android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 
@@ -117,7 +117,7 @@
                     android:layout_marginTop="8dp"
                     android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:drawableTint="@color/iconsTint"
-                    android:text="Atributo"
+                    android:text="Temporada de Plantación"
                     android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 
@@ -128,7 +128,7 @@
                     android:layout_marginTop="8dp"
                     android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:drawableTint="@color/iconsTint"
-                    android:text="Atributo"
+                    android:text="Exposición a la Luz"
                     android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 
@@ -139,7 +139,7 @@
                     android:layout_marginTop="8dp"
                     android:drawableLeft="@android:drawable/ic_menu_gallery"
                     android:drawableTint="@color/iconsTint"
-                    android:text="Atributo"
+                    android:text="Tiempo de Exposición a la Luz"
                     android:textColor="@color/plantAttribute"
                     android:textSize="25dp" />
 

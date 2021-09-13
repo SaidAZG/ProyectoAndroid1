@@ -45,7 +45,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/textEmailLogin"
+        android:id="@+id/userMail"
         style="@style/TextInputs"
         android:layout_width="0dp"
         android:layout_height="48dp"
@@ -60,7 +60,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/textPaswordLogin"
+        android:id="@+id/userPass"
         style="@style/TextInputs"
         android:layout_width="0dp"
         android:layout_height="48dp"
@@ -70,9 +70,9 @@
         android:hint="Contraseña"
         android:inputType="textPassword"
         android:paddingStart="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/textEmailLogin"
-        app:layout_constraintStart_toStartOf="@+id/textEmailLogin"
-        app:layout_constraintTop_toBottomOf="@+id/textEmailLogin" />
+        app:layout_constraintEnd_toEndOf="@+id/userMail"
+        app:layout_constraintStart_toStartOf="@+id/userMail"
+        app:layout_constraintTop_toBottomOf="@+id/userMail" />
 
     <Button
         android:id="@+id/buttonNextLogin"
@@ -82,12 +82,13 @@
         android:layout_marginTop="80dp"
         android:layout_marginEnd="8dp"
         style="@style/button"
+        android:onClick="loginUser"
         android:background="@drawable/button_rounded"
         android:text="Iniciar Sesión"
-        app:layout_constraintEnd_toEndOf="@+id/textPaswordLogin"
+        app:layout_constraintEnd_toEndOf="@+id/userPass"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textPaswordLogin"
-        app:layout_constraintTop_toBottomOf="@+id/textPaswordLogin" />
+        app:layout_constraintStart_toStartOf="@+id/userPass"
+        app:layout_constraintTop_toBottomOf="@+id/userPass" />
 
     <TextView
         android:id="@+id/textView4"
@@ -97,6 +98,7 @@
         android:layout_marginTop="8dp"
         android:text="¿Aún no tienes una cuenta? Crea una."
         android:textSize="16sp"
+        android:onClick="goToRegister"
         app:layout_constraintEnd_toEndOf="@+id/buttonNextLogin"
         app:layout_constraintStart_toStartOf="@+id/buttonNextLogin"
         app:layout_constraintTop_toBottomOf="@+id/buttonNextLogin" />

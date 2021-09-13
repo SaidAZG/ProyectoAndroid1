@@ -2,6 +2,7 @@ package mx.ipn.escom.app_plantas_iswm
 
 import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.content.Intent
 import android.os.PersistableBundle
 import android.util.Log
 import android.view.View
@@ -25,7 +26,7 @@ import com.google.android.gms.tasks.OnSuccessListener
 
 
 class RegistrarUsuario : AppCompatActivity(), View.OnClickListener{
-    var db: FirebaseFirestore = FirebaseFirestore.getInstance()
+
     private val binding: P3bSignUpBinding by lazy{
         DataBindingUtil.setContentView(this,R.layout.p3b_sign_up)
     }
@@ -34,25 +35,37 @@ class RegistrarUsuario : AppCompatActivity(), View.OnClickListener{
         super.onCreate(savedInstanceState)
         //Barra de navegacion superior
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        setContentView(R.layout.p3b_sign_up)
+        binding.root
     }
     override fun onClick(v: View?) {
-
-        db.collection("users/")
-            .add(hashMapOf(
-                "name" to binding.userName.text.toString(),
-                "last" to binding.userLastName.text.toString(),
-                "mail" to binding.userMail.text.toString(),
-                "pass" to binding.userPass.text.toString()
-            ))
+        val db: FirebaseFirestore = FirebaseFirestore.getInstance()
+        val name:String = binding.userName.text.toString()
+        val last:String = binding.userLastName.text.toString()
+        val mail:String = binding.userMail.text.toString()
+        val pass:String =binding.userPass.text.toString()
+        val pass2:String = binding.userPass2.text.toString()
+        val map = hashMapOf(
+            "name" to name,
+            "last" to last,
+            "mail" to mail,
+            "pass" to pass
+        )
+        Log.i(TAG,"------------------------------"+mail+name+last+pass+pass2)
+        db.collection("users")
+            .add(map)
             .addOnSuccessListener { documentReference ->
                 Log.d(
                     TAG,
                     "DocumentSnapshot added with ID: " + documentReference.id
                 )
+                var intent = Intent(this,IniciarSesion::class.java)
+                startActivity(intent)
+
+                Toast.makeText(this,"Usuario Registrado",Toast.LENGTH_SHORT).show()
+                finish()
             }
             .addOnFailureListener { e -> Log.w(TAG, "Error adding document", e) }
-        Toast.makeText(this,"Usuario Registrado",Toast.LENGTH_SHORT).show()
-        TODO("Aplicar validacion de claves coincidentes y formato de correo")
+
+        //TODO Aplicar validacion de claves coincidentes y formato de correo
     }
 }

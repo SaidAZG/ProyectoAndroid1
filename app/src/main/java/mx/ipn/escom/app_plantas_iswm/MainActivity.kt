@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.DataBindingUtil.setContentView
 import mx.ipn.escom.app_plantas_iswm.databinding.GetStartedBinding
-import mx.ipn.escom.app_plantas_iswm.databinding.P3bSignUpBinding
 
 class MainActivity : AppCompatActivity(), View.OnClickListener{
     private val binding: GetStartedBinding by lazy{
@@ -19,7 +18,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //Barra de navegacion superior
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(false)
+        actionBar?.hide()
+        binding.root
     }
 
     override fun onClick(v: View?) {
@@ -28,11 +29,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
 
     fun goToLogin(view: android.view.View) {
         var intent: Intent = Intent(this,IniciarSesion::class.java)
-        startActivity(intent)
-        finish()
-    }
-    fun goToRegister(view: android.view.View) {
-        var intent: Intent = Intent(this,RegistrarUsuario::class.java)
         startActivity(intent)
         finish()
     }

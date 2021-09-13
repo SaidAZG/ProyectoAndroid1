@@ -13,7 +13,8 @@
         <activity android:name=".MainActivity">
         </activity>
         <activity android:name=".ConsultarPlantas"></activity>
-        <activity android:name=".RegistrarUsuario">
+        <activity android:name=".RegistrarUsuario"></activity>
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

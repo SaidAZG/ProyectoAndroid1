@@ -50,7 +50,10 @@ class IniciarSesion : AppCompatActivity() {
                 if (task.isSuccessful) {
                     if (task.result!!.documents.isNotEmpty()){
                         Toast.makeText(this,"Usuario Encontrado",Toast.LENGTH_SHORT).show()
-                        intent: Intent = Intent(this,)
+                        var intent: Intent = Intent(this,Menu::class.java)
+                        intent.putExtra("user",mail)
+                        startActivity(intent)
+                        finish()
                     }else{
                         Toast.makeText(this,"Datos Incorrectos",Toast.LENGTH_SHORT).show()
                     }

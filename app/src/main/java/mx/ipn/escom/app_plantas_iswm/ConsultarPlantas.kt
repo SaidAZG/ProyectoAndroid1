@@ -1,5 +1,6 @@
 package mx.ipn.escom.app_plantas_iswm
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -18,6 +19,8 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener {
         //Activar la barra de navegacion superior
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
+        //Variable de Sesion
+        var user:String = this.intent.extras?.getString("user").toString()
         //ClickListeners
         binding.ETPlantSearch.setOnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
@@ -25,6 +28,8 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener {
             }
             return@setOnEditorActionListener false
         }
+
+        binding.userName.text = user
     }
 
     override fun onClick(v: View) {}

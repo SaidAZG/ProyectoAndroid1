@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "685801349033",
+    "firebase_url": "https://crud-ac820-default-rtdb.firebaseio.com",
+    "project_id": "crud-ac820",
+    "storage_bucket": "crud-ac820.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685801349033:android:e3cfb5bbc95d0c350feeb8",
+        "android_client_info": {
+          "package_name": "mx.ipn.escom.app_plantas_iswm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685801349033-4ju85tujlbufg3heb291r0apl3pqk25n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mx.ipn.escom.app_plantas_iswm",
+            "certificate_hash": "d17f151baa211ec2f7892db27aabd93762952209"
+          }
+        },
+        {
+          "client_id": "685801349033-2kigr421ujrg6107150p7b8gr7qr3vpu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAR-X729JZ5AEdiZQ4IYds5mu1frNdX4sQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685801349033-2kigr421ujrg6107150p7b8gr7qr3vpu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

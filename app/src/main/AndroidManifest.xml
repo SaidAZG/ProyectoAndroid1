@@ -12,12 +12,16 @@
         android:theme="@style/Theme.App_Plantas_ISWM">
         <activity android:name=".MainActivity">
         </activity>
-        <activity android:name=".ConsultarPlantas"></activity>
-        <activity android:name=".RegistrarUsuario"></activity>
+        <activity android:name=".ConsultarPlantas"
+            android:parentActivityName="mx.ipn.escom.app_plantas_iswm.Menu"></activity>
+        <activity android:name=".RegistrarUsuario"
+            android:parentActivityName="mx.ipn.escom.app_plantas_iswm.IniciarSesion"></activity>
         <activity android:name=".IniciarSesion"></activity>
-        <activity android:name=".RegistrarPlanta"></activity>
+        <activity android:name=".RegistrarPlanta"
+            android:parentActivityName="mx.ipn.escom.app_plantas_iswm.Menu"></activity>
         <activity android:name=".Menu"></activity>
-        <activity android:name=".More"></activity>
+        <activity android:name=".More"
+            android:parentActivityName="mx.ipn.escom.app_plantas_iswm.ConsultarPlantas"></activity>
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

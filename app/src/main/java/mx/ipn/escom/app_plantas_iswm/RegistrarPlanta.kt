@@ -52,7 +52,7 @@ class RegistrarPlanta : AppCompatActivity() {
         binding.fPlantacion.setText(dto.fechaPlantacion)
         binding.tExposicion.setText(dto.tiempoExposicion)
 
-        if (dto.lugarPlantacion.equals("Jardin")){
+        if (dto.lugarPlantacion.equals("Jardín")){
             binding.Jardin.isChecked = true
         }
         if (dto.lugarPlantacion.equals("Maceta")){
@@ -139,7 +139,8 @@ class RegistrarPlanta : AppCompatActivity() {
                 "lightExposure",map["lightExposure"].toString(),
                 "plantPlace",map["plantPlace"].toString(),
                 "seasonPlant",map["seasonPlant"].toString(),
-                "species",map["species"].toString())
+                "species",map["species"].toString(),
+                "owner",map["owner"].toString())
                 .addOnSuccessListener {
                     Log.d(TAG, "------------------"+dto.idDocument)
                     var intent = Intent(this, Menu::class.java)

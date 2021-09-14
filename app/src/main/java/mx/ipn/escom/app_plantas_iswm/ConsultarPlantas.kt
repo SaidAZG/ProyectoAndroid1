@@ -38,7 +38,6 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
             }
             return@setOnEditorActionListener false
         }
-        binding.userName.text = id
         iniciarRecyclerView(id)
 
     }
@@ -94,7 +93,11 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
     ) : Serializable
 
     override fun editarPlanta(dtoPlanta: DtoPlanta) {
-        TODO("Not yet implemented")
+        var intent: Intent = Intent(this,RegistrarPlanta::class.java)
+        intent.putExtra("dto",dtoPlanta)
+        intent.putExtra("id",dtoPlanta.usuario)
+        intent.putExtra("back","P")
+        startActivity(intent)
     }
 
     override fun eliminarPlanta(dtoPlanta: DtoPlanta) {

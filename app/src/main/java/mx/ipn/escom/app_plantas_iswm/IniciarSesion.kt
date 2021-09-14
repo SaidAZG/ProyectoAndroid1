@@ -37,7 +37,6 @@ class IniciarSesion : AppCompatActivity() {
     fun goToRegister(view: android.view.View) {
         var intent: Intent = Intent(this,RegistrarUsuario::class.java)
         startActivity(intent)
-        finish()
     }
 
     fun loginUser(view: android.view.View) {
@@ -50,7 +49,7 @@ class IniciarSesion : AppCompatActivity() {
                 if (task.isSuccessful) {
                     if (task.result!!.documents.isNotEmpty()){
                         var id: String = task.result!!.documents[0].id
-                        Toast.makeText(this,"Usuario Encontrado",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,"Bienvenido",Toast.LENGTH_SHORT).show()
                         var intent: Intent = Intent(this,Menu::class.java)
                         intent.putExtra("id",id)
                         startActivity(intent)

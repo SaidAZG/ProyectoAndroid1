@@ -88,6 +88,7 @@ class RegistrarPlanta : AppCompatActivity() {
                     "DocumentSnapshot added with ID: " + documentReference.id
                 )
                 var intent = Intent(this, Menu::class.java)
+                intent.putExtra("id",id)
                 startActivity(intent)
                 Toast.makeText(this, "Planta Registrada", Toast.LENGTH_SHORT).show()
                 finish()

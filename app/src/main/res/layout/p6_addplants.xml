@@ -90,7 +90,7 @@
                 android:background="@drawable/border_text"
                 android:ems="10"
 
-                android:hint="Dimensiones (alto-ancho-largo)*cm"
+                android:hint="Dimensiones (alto-ancho-largo)(cm)"
                 android:inputType="date"
                 android:maxLength="11" />
 
@@ -257,7 +257,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:ems="10"
-                android:hint="Tiempo de Exposición"
+                android:hint="Tiempo de Exposición (hrs)"
                 android:inputType="time"
                 android:maxLength="2" />
 

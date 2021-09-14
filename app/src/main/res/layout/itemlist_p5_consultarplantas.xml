@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingVertical="8dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
         app:cardCornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -24,7 +24,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/TV_PlantName"
+        android:id="@+id/plantName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -37,33 +37,42 @@
         app:layout_constraintTop_toTopOf="@+id/cardView" />
 
     <TextView
-        android:id="@+id/TV_More"
+        android:id="@+id/seeMore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginBottom="8dp"
         android:fontFamily="@font/montserrat"
         android:text="Ver Mas"
         android:textColor="@color/seeMore"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView"
-        app:layout_constraintStart_toStartOf="@+id/TV_PlantName" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/plantName"
+        app:layout_constraintTop_toBottomOf="@+id/plantName" />
 
     <ImageButton
-        android:id="@+id/IB_Edit"
+        android:id="@+id/edit"
         android:layout_width="30dp"
         android:layout_height="40dp"
         android:backgroundTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/TV_More"
-        app:layout_constraintEnd_toStartOf="@+id/IB_Delete"
-        app:layout_constraintTop_toTopOf="@+id/IB_Delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/delete"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/plantName"
         app:srcCompat="@android:drawable/ic_menu_edit" />
 
     <ImageButton
-        android:id="@+id/IB_Delete"
+        android:id="@+id/delete"
         android:layout_width="30dp"
         android:layout_height="40dp"
         android:backgroundTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/TV_More"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plantName"
         app:srcCompat="@android:drawable/ic_menu_delete" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".8" />
 </androidx.constraintlayout.widget.ConstraintLayout>

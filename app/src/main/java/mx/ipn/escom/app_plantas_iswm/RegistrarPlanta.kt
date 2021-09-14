@@ -1,9 +1,8 @@
 package mx.ipn.escom.app_plantas_iswm
 
 import android.content.ContentValues
-import android.content.Intent
-import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.RadioGroup
 import android.widget.Spinner
@@ -14,6 +13,12 @@ import com.google.firebase.firestore.FirebaseFirestore
 import mx.ipn.escom.app_plantas_iswm.databinding.P3aLoginBinding
 import mx.ipn.escom.app_plantas_iswm.databinding.P6AddplantsBinding
 import java.util.*
+import android.content.Intent
+import android.net.Uri
+import android.os.Bundle
+import android.provider.MediaStore
+import android.widget.Button
+import android.widget.ImageView
 
 class RegistrarPlanta : AppCompatActivity() {
 

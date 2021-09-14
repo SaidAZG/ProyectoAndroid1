@@ -261,6 +261,18 @@
                 android:inputType="time"
                 android:maxLength="2" />
 
+            <ImageView
+                android:id="@+id/img_view_plant"
+                android:layout_width="match_parent"
+                android:layout_height="102dp"
+                app:srcCompat="@drawable/plant1" />
+
+            <Button
+                android:id="@+id/load_img_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Seleccionar Planta"/>
+
         </LinearLayout>
     </ScrollView>
 

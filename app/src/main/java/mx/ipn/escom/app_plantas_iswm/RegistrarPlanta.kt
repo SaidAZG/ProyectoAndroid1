@@ -128,44 +128,60 @@ class RegistrarPlanta : AppCompatActivity() {
             "owner" to id
         )
 
-        var back: String = this.intent.extras?.getString("back").toString()
-        if(back == "P"){
-            val dto:ConsultarPlantas.DtoPlanta = this.intent.extras?.get("dto") as ConsultarPlantas.DtoPlanta
-            db.collection("plants").document(dto.idDocument)
-                .update("commonName", map["commonName"].toString(),
-                "datePlant",map["datePlant"].toString(),
-                "dimention",map["dimention"].toString(),
-                    "lightTime",map["lightTime"].toString(),
-                "lightExposure",map["lightExposure"].toString(),
-                "plantPlace",map["plantPlace"].toString(),
-                "seasonPlant",map["seasonPlant"].toString(),
-                "species",map["species"].toString(),
-                "owner",map["owner"].toString())
-                .addOnSuccessListener {
-                    Log.d(TAG, "------------------"+dto.idDocument)
-                    var intent = Intent(this, Menu::class.java)
-                    intent.putExtra("id",id)
-                    startActivity(intent)
-                    Toast.makeText(this, "Planta Actualizada", Toast.LENGTH_SHORT).show()
-                    finish()}
-                .addOnFailureListener { e -> Log.w(TAG, "Error updating document", e) }
+        if(commonName.isEmpty()){
+            binding.nComun.error = "Datos Vacíos"
+        }else if(species.isEmpty()){
+            binding.especie.error = "Datos Vacíos"
+        }else if(dimension.isEmpty()){
+            binding.dimensiones.error = "Datos Vacíos"
+        }else if(datePlant.isEmpty()){
+            binding.fPlantacion.error = "Datos Vacíos"
+        }else if(lightTime.isEmpty()){
+            binding.tExposicion.error = "Datos Vacíos"
+        }else if(group1.checkedRadioButtonId == -1){
+            Toast.makeText(this, "Seleccione un lugar de plantación",Toast.LENGTH_LONG).show()
+        }else if(group2.checkedRadioButtonId == -1){
+            Toast.makeText(this, "Seleccione el tipo de exposición a Luz",Toast.LENGTH_LONG).show()
         }else{
-            db.collection("plants")
-                .add(map)
-                .addOnSuccessListener { documentReference ->
-                    Log.d(
-                        ContentValues.TAG,
-                        "DocumentSnapshot added with ID: " + documentReference.id
-                    )
-                    var intent = Intent(this, Menu::class.java)
-                    intent.putExtra("id",id)
-                    startActivity(intent)
-                    Toast.makeText(this, "Planta Registrada", Toast.LENGTH_SHORT).show()
-                    finish()
-                }
-                .addOnFailureListener { e -> Log.w(ContentValues.TAG, "Error adding document", e) }
+            var back: String = this.intent.extras?.getString("back").toString()
+            if(back == "P"){
+                val dto:ConsultarPlantas.DtoPlanta = this.intent.extras?.get("dto") as ConsultarPlantas.DtoPlanta
+                db.collection("plants").document(dto.idDocument)
+                    .update("commonName", map["commonName"].toString(),
+                        "datePlant",map["datePlant"].toString(),
+                        "dimention",map["dimention"].toString(),
+                        "lightTime",map["lightTime"].toString(),
+                        "lightExposure",map["lightExposure"].toString(),
+                        "plantPlace",map["plantPlace"].toString(),
+                        "seasonPlant",map["seasonPlant"].toString(),
+                        "species",map["species"].toString(),
+                        "owner",map["owner"].toString())
+                    .addOnSuccessListener {
+                        Log.d(TAG, "------------------"+dto.idDocument)
+                        var intent = Intent(this, Menu::class.java)
+                        intent.putExtra("id",id)
+                        startActivity(intent)
+                        Toast.makeText(this, "Planta Actualizada", Toast.LENGTH_SHORT).show()
+                        finish()}
+                    .addOnFailureListener { e -> Log.w(TAG, "Error updating document", e) }
+            }else{
+                db.collection("plants")
+                    .add(map)
+                    .addOnSuccessListener { documentReference ->
+                        Log.d(
+                            ContentValues.TAG,
+                            "DocumentSnapshot added with ID: " + documentReference.id
+                        )
+                        var intent = Intent(this, Menu::class.java)
+                        intent.putExtra("id",id)
+                        startActivity(intent)
+                        Toast.makeText(this, "Planta Registrada", Toast.LENGTH_SHORT).show()
+                        finish()
+                    }
+                    .addOnFailureListener { e -> Log.w(ContentValues.TAG, "Error adding document", e) }
+            }
         }
-        //TODO Aplicar validacion de claves coincidentes y formato de correo
+
     }
 
     fun onRadioButtonClicked(view: android.view.View) {

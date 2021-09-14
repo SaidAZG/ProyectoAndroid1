@@ -29,6 +29,7 @@ class Menu : AppCompatActivity() {
         var id: String = this.intent.extras?.getString("id").toString()
         var intent: Intent = Intent(this,RegistrarPlanta::class.java)
         intent.putExtra("id",id)
+        intent.putExtra("back","M")
         startActivity(intent)
     }
 }

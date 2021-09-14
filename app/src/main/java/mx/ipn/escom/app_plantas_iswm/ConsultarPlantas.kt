@@ -59,6 +59,14 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
                             val dto = DtoPlanta()
                             dto.idDocument = document.id
                             dto.nombrePlanta = document.data["commonName"].toString()
+                            dto.especie = document.data["species"].toString()
+                            dto.dimensiones = document.data["dimention"].toString()
+                            dto.fechaPlantacion = document.data["datePlant"].toString()
+                            dto.lugarPlantacion = document.data["plantPlace"].toString()
+                            dto.temporadaPlantacion = document.data["seasonPlant"].toString()
+                            dto.exposicionLuz = document.data["lightExposure"].toString()
+                            dto.tiempoExposicion = document.data["lightTime"].toString()
+                            dto.usuario = document.data["owner"].toString()
                             listDatos.add(dto)
                         }
                         adapter.submitList(listDatos)
@@ -74,7 +82,15 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
 
     data class DtoPlanta(
         var idDocument: String = "",
-        var nombrePlanta: String = ""
+        var nombrePlanta: String = "",
+        var especie:String = "",
+        var dimensiones :String = "",
+        var fechaPlantacion :String = "",
+        var lugarPlantacion:String = "",
+        var temporadaPlantacion:String = "",
+        var exposicionLuz:String = "",
+        var tiempoExposicion:String = "",
+        var usuario:String =""
     ) : Serializable
 
     override fun editarPlanta(dtoPlanta: DtoPlanta) {
@@ -87,7 +103,8 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
 
     override fun seeMore(dtoPlanta: DtoPlanta) {
         var intent: Intent = Intent(this,More::class.java)
-        intent.putExtra("id",dtoPlanta.idDocument)
+        intent.putExtra("dto",dtoPlanta)
+        intent.putExtra("id",dtoPlanta.usuario)
         startActivity(intent)
         finish()
     }

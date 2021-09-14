@@ -17,6 +17,7 @@
         <activity android:name=".IniciarSesion"></activity>
         <activity android:name=".RegistrarPlanta"></activity>
         <activity android:name=".Menu"></activity>
+        <activity android:name=".More"></activity>
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.content.Intent
 import android.os.PersistableBundle
 import android.util.Log
+import android.util.Patterns
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
@@ -21,8 +22,7 @@ import com.google.android.gms.tasks.OnFailureListener
 import com.google.firebase.firestore.DocumentReference
 
 import com.google.android.gms.tasks.OnSuccessListener
-
-
+import java.util.regex.Pattern
 
 
 class RegistrarUsuario : AppCompatActivity(), View.OnClickListener{
@@ -51,21 +51,43 @@ class RegistrarUsuario : AppCompatActivity(), View.OnClickListener{
             "pass" to pass
         )
         Log.i(TAG,"------------------------------"+mail+name+last+pass+pass2)
-        db.collection("users")
-            .add(map)
-            .addOnSuccessListener { documentReference ->
-                Log.d(
-                    TAG,
-                    "DocumentSnapshot added with ID: " + documentReference.id
-                )
-                var intent = Intent(this,IniciarSesion::class.java)
-                startActivity(intent)
+        if (name.isEmpty()){
+            binding.userName.error = "Datos Vacíos"
+        }else if (last.isEmpty()){
+            binding.userLastName.error = "Datos Vacíos"
+        }else if (mail.isEmpty()){
+            binding.userMail.error = "Datos Vacíos"
+        }else if (!validarEmail(mail)){
+            binding.userPass2.error = "Formato de Correo Incorrecto"
+        }else if (last.isEmpty()){
+            binding.userLastName.error = "Datos Vacíos"
+        }else if (pass.length < 8){
+            binding.userPass2.error = "Mínimo 8 caracteres"
+        }else if (pass.isEmpty()){
+            binding.userPass.error = "Datos Vacíos"
+        }else if (pass2.isEmpty()){
+            binding.userPass2.error = "Datos Vacíos"
+        }else{
+            db.collection("users")
+                .add(map)
+                .addOnSuccessListener { documentReference ->
+                    Log.d(
+                        TAG,
+                        "DocumentSnapshot added with ID: " + documentReference.id
+                    )
+                    var intent = Intent(this,IniciarSesion::class.java)
+                    startActivity(intent)
 
-                Toast.makeText(this,"Usuario Registrado",Toast.LENGTH_SHORT).show()
-                finish()
-            }
-            .addOnFailureListener { e -> Log.w(TAG, "Error adding document", e) }
-
+                    Toast.makeText(this,"Usuario Registrado",Toast.LENGTH_SHORT).show()
+                    finish()
+                }
+                .addOnFailureListener { e -> Log.w(TAG, "Error adding document", e) }
+        }
         //TODO Aplicar validacion de claves coincidentes y formato de correo
+    }
+
+    private fun validarEmail(email: String): Boolean {
+        val pattern: Pattern = Patterns.EMAIL_ADDRESS
+        return pattern.matcher(email).matches()
     }
 }

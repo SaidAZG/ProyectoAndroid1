@@ -19,8 +19,8 @@ import com.google.firebase.firestore.QuerySnapshot
 import androidx.annotation.NonNull
 
 import com.google.android.gms.tasks.OnCompleteListener
-
-
+import android.util.Patterns
+import java.util.regex.Pattern
 
 
 class IniciarSesion : AppCompatActivity() {
@@ -43,6 +43,7 @@ class IniciarSesion : AppCompatActivity() {
         val db: FirebaseFirestore = FirebaseFirestore.getInstance()
         val mail: String = binding.userMail.text.toString()
         val pass: String = binding.userPass.text.toString()
+
         db.collection("users").whereEqualTo("mail",mail).whereEqualTo("pass",pass)
             .get()
             .addOnCompleteListener { task ->
@@ -55,11 +56,12 @@ class IniciarSesion : AppCompatActivity() {
                         startActivity(intent)
                         finish()
                     }else{
-                        Toast.makeText(this,"Datos Incorrectos",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,"Datos sin coincidencias",Toast.LENGTH_SHORT).show()
                     }
                 } else {
                     Log.w(TAG, "Error getting documents.", task.exception)
                 }
             }
+
     }
 }

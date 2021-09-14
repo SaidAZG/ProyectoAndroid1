@@ -24,6 +24,7 @@ class More : AppCompatActivity() {
         //Objeto Planta Seleccionado
         val dto:ConsultarPlantas.DtoPlanta = this.intent.extras?.get("dto") as ConsultarPlantas.DtoPlanta
         binding.plantName.text = dto.nombrePlanta
+        binding.especie.text = dto.especie
         binding.dimensiones.text = dto.dimensiones
         binding.fecha.text = dto.fechaPlantacion
         binding.lugar.text = dto.lugarPlantacion

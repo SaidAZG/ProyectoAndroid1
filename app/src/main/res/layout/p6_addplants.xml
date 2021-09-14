@@ -11,13 +11,12 @@
         style="@style/button"
         android:layout_width="215dp"
         android:layout_height="47dp"
-        android:layout_marginTop="24dp"
         android:background="@drawable/button_rounded"
         android:onClick="registrarPlanta"
         android:text="Agregar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -59,7 +58,7 @@
                 android:layout_marginRight="16dp"
                 android:background="@drawable/border_text"
                 android:ems="10"
-                android:hint="Nombre Comúm"
+                android:hint="Nombre Común"
                 android:inputType="textPersonName" />
 
             <EditText
@@ -107,7 +106,7 @@
                 android:background="@drawable/border_text"
 
                 android:ems="10"
-                android:hint="Fecha de plantación"
+                android:hint="Fecha de plantación (dd/mm/aaaa)"
                 android:inputType="date"
                 android:maxLength="10" />
 

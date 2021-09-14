@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -39,7 +41,6 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
             return@setOnEditorActionListener false
         }
         iniciarRecyclerView(id)
-
     }
 
     private fun iniciarRecyclerView(id: String) {
@@ -101,7 +102,17 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
     }
 
     override fun eliminarPlanta(dtoPlanta: DtoPlanta) {
-        TODO("Not yet implemented")
+        val db: FirebaseFirestore = FirebaseFirestore.getInstance()
+        db.collection("plants").document(dtoPlanta.idDocument)
+            .delete()
+            .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully deleted!")
+                Toast.makeText(this,"Planta Eliminada :", Toast.LENGTH_LONG).show()}
+            .addOnFailureListener { e -> Log.w(TAG, "Error deleting document", e) }
+        var intent: Intent = Intent(this,ConsultarPlantas::class.java)
+        intent.putExtra("dto",dtoPlanta)
+        intent.putExtra("id",dtoPlanta.usuario)
+        startActivity(intent)
+        finish()
     }
 
     override fun seeMore(dtoPlanta: DtoPlanta) {

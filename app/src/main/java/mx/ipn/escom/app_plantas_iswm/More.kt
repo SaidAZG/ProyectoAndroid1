@@ -1,9 +1,13 @@
 package mx.ipn.escom.app_plantas_iswm
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.google.firebase.firestore.FirebaseFirestore
 import mx.ipn.escom.app_plantas_iswm.databinding.P5ConsultarplantasBinding
 import mx.ipn.escom.app_plantas_iswm.databinding.P5aVermasBinding
 
@@ -38,5 +42,13 @@ class More : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
-    fun deletePlant(view: android.view.View) {}
+    fun deletePlant(view: android.view.View) {
+        val db: FirebaseFirestore = FirebaseFirestore.getInstance()
+        val dto:ConsultarPlantas.DtoPlanta = this.intent.extras?.get("dto") as ConsultarPlantas.DtoPlanta
+        db.collection("plants").document(dto.idDocument)
+            .delete()
+            .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully deleted!")
+            Toast.makeText(this,"Planta Eliminada :",Toast.LENGTH_LONG).show()}
+            .addOnFailureListener { e -> Log.w(TAG, "Error deleting document", e) }
+    }
 }

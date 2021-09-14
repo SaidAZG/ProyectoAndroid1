@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">App Plantas</string>
+    <string-array name="seasonsArray">
+        <item>Primavera</item>
+        <item>Verano</item>
+        <item>Otoño</item>
+        <item>Invierno</item>
+    </string-array>
 </resources>

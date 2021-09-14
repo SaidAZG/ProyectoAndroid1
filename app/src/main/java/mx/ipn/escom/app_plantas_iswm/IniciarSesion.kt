@@ -49,9 +49,10 @@ class IniciarSesion : AppCompatActivity() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     if (task.result!!.documents.isNotEmpty()){
+                        var id: String = task.result!!.documents[0].id
                         Toast.makeText(this,"Usuario Encontrado",Toast.LENGTH_SHORT).show()
                         var intent: Intent = Intent(this,Menu::class.java)
-                        intent.putExtra("user",mail)
+                        intent.putExtra("id",id)
                         startActivity(intent)
                         finish()
                     }else{

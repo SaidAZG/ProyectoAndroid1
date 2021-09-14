@@ -20,13 +20,15 @@ class Menu : AppCompatActivity() {
 
     fun goToPlants(view: android.view.View) {
         //Variable de Sesion para obtencion de datos respecto a usuario
-        var user: String = this.intent.extras?.getString("user").toString()
+        var id: String = this.intent.extras?.getString("id").toString()
         var intent: Intent = Intent(this,ConsultarPlantas::class.java)
-        intent.putExtra("user",user)
+        intent.putExtra("id",id)
         startActivity(intent)
     }
     fun goToRegisterPlants(view: android.view.View) {
-        var intent: Intent = Intent(this,ConsultarPlantas::class.java)
+        var id: String = this.intent.extras?.getString("id").toString()
+        var intent: Intent = Intent(this,RegistrarPlanta::class.java)
+        intent.putExtra("id",id)
         startActivity(intent)
     }
 }

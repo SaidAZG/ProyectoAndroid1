@@ -58,15 +58,15 @@ class RegistrarUsuario : AppCompatActivity(), View.OnClickListener{
         }else if (mail.isEmpty()){
             binding.userMail.error = "Datos Vacíos"
         }else if (!validarEmail(mail)){
-            binding.userPass2.error = "Formato de Correo Incorrecto"
-        }else if (last.isEmpty()){
-            binding.userLastName.error = "Datos Vacíos"
+            binding.userMail.error = "Formato de Correo Incorrecto"
         }else if (pass.length < 8){
-            binding.userPass2.error = "Mínimo 8 caracteres"
+            binding.userPass.error = "Mínimo 8 caracteres"
         }else if (pass.isEmpty()){
             binding.userPass.error = "Datos Vacíos"
         }else if (pass2.isEmpty()){
             binding.userPass2.error = "Datos Vacíos"
+        }else if (pass != pass2){
+            binding.userPass2.error = "Las claves deben coincidir"
         }else{
             db.collection("users")
                 .add(map)

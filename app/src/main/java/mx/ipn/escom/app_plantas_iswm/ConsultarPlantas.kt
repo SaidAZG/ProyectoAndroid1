@@ -27,9 +27,6 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //Activar la barra de navegacion superior
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-
         //Variable de Sesion
         var id: String = this.intent.extras?.getString("id").toString()
 

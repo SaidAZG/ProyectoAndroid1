@@ -9,12 +9,21 @@ import androidx.appcompat.app.AppCompatActivity
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        actionBar?.hide()
+        supportActionBar?.hide()
         setContentView(R.layout.cover)
+        val tutorialKey = "SOME_KEY"
+        val firstTime = getPreferences(MODE_PRIVATE).getBoolean(tutorialKey, true)
         Handler().postDelayed({
-            val intent = Intent(this@SplashActivity, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+            if (firstTime) {
+                val intent = Intent(this@SplashActivity, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+                getPreferences(MODE_PRIVATE).edit().putBoolean(tutorialKey, false).apply()
+            }else{
+                val intent = Intent(this@SplashActivity, IniciarSesion::class.java)
+                startActivity(intent)
+                finish()
+            }
         }, 4000)
     }
 }

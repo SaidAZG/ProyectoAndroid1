@@ -32,6 +32,7 @@ class IniciarSesion : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.root
+        supportActionBar?.hide()
     }
 
     fun goToRegister(view: android.view.View) {
@@ -51,7 +52,7 @@ class IniciarSesion : AppCompatActivity() {
                     if (task.result!!.documents.isNotEmpty()){
                         var id: String = task.result!!.documents[0].id
                         Toast.makeText(this,"Bienvenido",Toast.LENGTH_SHORT).show()
-                        var intent: Intent = Intent(this,Menu::class.java)
+                        var intent: Intent = Intent(this,ConsultarPlantas::class.java)
                         intent.putExtra("id",id)
                         startActivity(intent)
                         finish()

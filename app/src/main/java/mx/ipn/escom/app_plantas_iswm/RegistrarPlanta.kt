@@ -24,6 +24,12 @@ class RegistrarPlanta : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         //Barra de navegacion superior
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        //TODO[
+        // cuando hace uso de este metodo regresa a la vista establecida como padre pero toma todas las consultas de la base de datos
+        // 1. Sobreescribir el metodo con una supportActionBar creada manualmente con un metodo onClick que rediriga a la actividad con los parametros de usuario para que solo muestre
+        //  los resultados asignados al usuario que entro a registrar planta
+        // 2. Redirigir a otra actividad (que no es posible si la pantalla de inicio es consultar plantas)
+        // ].
         binding.root
 
         //Datos de Spinner
@@ -158,7 +164,7 @@ class RegistrarPlanta : AppCompatActivity() {
                         "owner",map["owner"].toString())
                     .addOnSuccessListener {
                         Log.d(TAG, "------------------"+dto.idDocument)
-                        var intent = Intent(this, Menu::class.java)
+                        var intent = Intent(this, ConsultarPlantas::class.java)
                         intent.putExtra("id",id)
                         startActivity(intent)
                         Toast.makeText(this, "Planta Actualizada", Toast.LENGTH_SHORT).show()
@@ -172,7 +178,7 @@ class RegistrarPlanta : AppCompatActivity() {
                             ContentValues.TAG,
                             "DocumentSnapshot added with ID: " + documentReference.id
                         )
-                        var intent = Intent(this, Menu::class.java)
+                        var intent = Intent(this, ConsultarPlantas::class.java)
                         intent.putExtra("id",id)
                         startActivity(intent)
                         Toast.makeText(this, "Planta Registrada", Toast.LENGTH_SHORT).show()

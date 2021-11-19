@@ -54,6 +54,11 @@ class IniciarSesion : AppCompatActivity() {
                         Toast.makeText(this,"Bienvenido",Toast.LENGTH_SHORT).show()
                         var intent: Intent = Intent(this,ConsultarPlantas::class.java)
                         intent.putExtra("id",id)
+                        //TODO [
+                        //  Ahora en lugar de pasar la variable de sesion como un objeto en los intent ahora hay que utilizar la variable de sesion en los sharedPreferences
+                        //  En el splashActivity validar la variable de sesión para escoger la actividad de destino del usuario
+                        //  El cierre de sesión es lo único que establece la variable de sesión como null
+                        // ].
                         startActivity(intent)
                         finish()
                     }else{

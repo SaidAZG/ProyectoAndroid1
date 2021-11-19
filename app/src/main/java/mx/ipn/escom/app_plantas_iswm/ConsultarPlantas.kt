@@ -40,6 +40,24 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
         iniciarRecyclerView(id)
     }
 
+    override fun onResume() {
+        //TODO [
+        //  Solucionar error de navegar al padre y que haga la cosa rara
+        // ].
+        super.onResume()
+        //Variable de Sesion
+        var id: String = this.intent.extras?.getString("id").toString()
+
+        //ClickListeners
+        binding.ETPlantSearch.setOnEditorActionListener { v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                return@setOnEditorActionListener true
+            }
+            return@setOnEditorActionListener false
+        }
+        iniciarRecyclerView(id)
+    }
+
     private fun iniciarRecyclerView(id: String) {
         binding.RVConsults.layoutManager = LinearLayoutManager(this)
         adapter = AdapterPlantas(this)
@@ -118,5 +136,13 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
         intent.putExtra("id",dtoPlanta.usuario)
         startActivity(intent)
         finish()
+    }
+
+    fun goToRegisterPlants(view: android.view.View) {
+        var id: String = this.intent.extras?.getString("id").toString()
+        var intent: Intent = Intent(this,RegistrarPlanta::class.java)
+        intent.putExtra("id",id)
+        intent.putExtra("back","M")
+        startActivity(intent)
     }
 }

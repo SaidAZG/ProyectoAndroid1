@@ -11,14 +11,25 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         setContentView(R.layout.cover)
-        val tutorialKey = "SOME_KEY"
+        redirect()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        supportActionBar?.hide()
+        setContentView(R.layout.cover)
+        redirect()
+    }
+
+    private fun redirect(){
+        val tutorialKey = "NEW"
         val firstTime = getPreferences(MODE_PRIVATE).getBoolean(tutorialKey, true)
         Handler().postDelayed({
             if (firstTime) {
+                getPreferences(MODE_PRIVATE).edit().putBoolean(tutorialKey, false).apply()
                 val intent = Intent(this@SplashActivity, MainActivity::class.java)
                 startActivity(intent)
                 finish()
-                getPreferences(MODE_PRIVATE).edit().putBoolean(tutorialKey, false).apply()
             }else{
                 val intent = Intent(this@SplashActivity, IniciarSesion::class.java)
                 startActivity(intent)

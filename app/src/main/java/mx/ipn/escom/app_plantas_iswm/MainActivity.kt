@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //Barra de navegacion superior
-        supportActionBar!!.setDisplayHomeAsUpEnabled(false)
+        //supportActionBar!!.setDisplayHomeAsUpEnabled(false)
         actionBar?.hide()
         binding.root
     }

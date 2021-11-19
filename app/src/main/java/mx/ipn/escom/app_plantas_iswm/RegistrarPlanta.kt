@@ -12,12 +12,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.firestore.FirebaseFirestore
-import mx.ipn.escom.app_plantas_iswm.databinding.P6AddplantsBinding
+import mx.ipn.escom.app_plantas_iswm.databinding.AddPlantBinding
 
 class RegistrarPlanta : AppCompatActivity() {
 
-    private val binding: P6AddplantsBinding by lazy {
-        DataBindingUtil.setContentView(this, R.layout.p6_addplants)
+    private val binding: AddPlantBinding by lazy {
+        DataBindingUtil.setContentView(this, R.layout.add_plant)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +48,6 @@ class RegistrarPlanta : AppCompatActivity() {
             val dto:ConsultarPlantas.DtoPlanta = this.intent.extras?.get("dto") as ConsultarPlantas.DtoPlanta
             editarPlantas(dto)
         }
-
     }
 
     private fun editarPlantas(dto: ConsultarPlantas.DtoPlanta) {
@@ -190,7 +189,4 @@ class RegistrarPlanta : AppCompatActivity() {
 
     }
 
-    fun onRadioButtonClicked(view: android.view.View) {
-
-    }
 }

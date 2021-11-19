@@ -4,27 +4,24 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.util.Log.v
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
-import mx.ipn.escom.app_plantas_iswm.databinding.P5ConsultarplantasBinding
+import mx.ipn.escom.app_plantas_iswm.databinding.ConsultPlantsBinding
 import java.io.Serializable
 import java.util.*
-import android.util.Log.wtf as wtf1
 
 class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick {
     val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
     private lateinit var adapter: AdapterPlantas
 
-    private val binding: P5ConsultarplantasBinding by lazy {
-        DataBindingUtil.setContentView(this, R.layout.p5_consultarplantas)
+    private val binding: ConsultPlantsBinding by lazy {
+        DataBindingUtil.setContentView(this, R.layout.consult_plants)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -47,7 +47,7 @@ Data Binding, ambos xmlns se adjuntan debajo de la etiqueta layout-->
             app:layout_constraintEnd_toEndOf="@+id/ET_PlantSearch"
             app:layout_constraintStart_toStartOf="@+id/ET_PlantSearch"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
-            tools:listitem="@layout/itemlist_p5_consultarplantas" />
+            tools:listitem="@layout/cardview_plants" />
 
         <TextView
             android:id="@+id/textView6"

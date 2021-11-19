@@ -8,12 +8,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.firestore.FirebaseFirestore
-import mx.ipn.escom.app_plantas_iswm.databinding.P5ConsultarplantasBinding
-import mx.ipn.escom.app_plantas_iswm.databinding.P5aVermasBinding
+import mx.ipn.escom.app_plantas_iswm.databinding.PlantDetailsBinding
 
 class More : AppCompatActivity() {
-    private val binding: P5aVermasBinding by lazy {
-        DataBindingUtil.setContentView(this, R.layout.p5a_vermas)
+    private val binding: PlantDetailsBinding by lazy {
+        DataBindingUtil.setContentView(this, R.layout.plant_details)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

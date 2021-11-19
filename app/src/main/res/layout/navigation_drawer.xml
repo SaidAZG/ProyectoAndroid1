@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:tools="http://schemas.android.com/tools">
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/drawerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:openDrawer="start">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true">
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.AppBarLayout.PrimarySurface"
+                    android:fitsSystemWindows="true">
+
+                    <com.google.android.material.appbar.MaterialToolbar
+                        android:id="@+id/topAppBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        app:title="Barra Superior"
+                        app:navigationIcon="@android:drawable/ic_menu_myplaces"
+                        style="@style/Widget.MaterialComponents.Toolbar.PrimarySurface"
+                        android:background="@android:color/transparent"
+                        android:elevation="0dp"
+                        app:titleCentered="true"/>
+
+                </com.google.android.material.appbar.AppBarLayout>
+
+                <!-- Screen content -->
+                <!-- Use app:layout_behavior="@string/appbar_scrolling_view_behavior" to fit below top app bar -->
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/navigation_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                app:headerLayout="@layout/header_navigation_drawer"
+                app:layout_constraintTop_toTopOf="parent"
+                app:menu="@menu/navigation_drawer" />
+
+        </androidx.drawerlayout.widget.DrawerLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

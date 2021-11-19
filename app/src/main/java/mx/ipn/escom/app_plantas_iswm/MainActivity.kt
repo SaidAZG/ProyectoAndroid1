@@ -1,18 +1,15 @@
 package mx.ipn.escom.app_plantas_iswm;
 
-import android.app.Activity;
 import android.content.Intent
-
-import android.os.Bundle;
+import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.DataBindingUtil.setContentView
-import mx.ipn.escom.app_plantas_iswm.databinding.GetStartedBinding
+import mx.ipn.escom.app_plantas_iswm.databinding.WelcomeUserScreenBinding
 
 class MainActivity : AppCompatActivity(), View.OnClickListener{
-    private val binding: GetStartedBinding by lazy{
-        DataBindingUtil.setContentView(this,R.layout.get_started)
+    private val binding: WelcomeUserScreenBinding by lazy{
+        DataBindingUtil.setContentView(this,R.layout.welcome_user_screen)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

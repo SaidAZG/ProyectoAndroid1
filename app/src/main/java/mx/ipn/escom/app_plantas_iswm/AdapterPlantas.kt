@@ -3,7 +3,6 @@ package mx.ipn.escom.app_plantas_iswm
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import androidx.recyclerview.widget.ListAdapter
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
@@ -16,7 +15,7 @@ class AdapterPlantas(private val listener: ConsultarPlantas) :
     //Enlazar adaptador con el itemlist
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderDatos {
         val view: View =
-            LayoutInflater.from(parent.context).inflate(R.layout.itemlist_p5_consultarplantas, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.cardview_plants, parent, false)
         return ViewHolderDatos(view)
     }
 

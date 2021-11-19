@@ -9,14 +9,14 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
-        setContentView(R.layout.cover)
+        setContentView(R.layout.splash_screen)
         redirect()
     }
 
     override fun onResume() {
         super.onResume()
         supportActionBar?.hide()
-        setContentView(R.layout.cover)
+        setContentView(R.layout.splash_screen)
         redirect()
     }
 

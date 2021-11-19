@@ -1,34 +1,23 @@
 package mx.ipn.escom.app_plantas_iswm
 
 import android.content.ContentValues.TAG
-import android.os.Bundle
 import android.content.Intent
-import android.os.PersistableBundle
+import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
 import android.view.View
-import android.view.inputmethod.EditorInfo
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
-import mx.ipn.escom.app_plantas_iswm.databinding.P3bSignUpBinding
-import androidx.annotation.NonNull
-
-import com.google.android.gms.tasks.OnFailureListener
-
-import com.google.firebase.firestore.DocumentReference
-
-import com.google.android.gms.tasks.OnSuccessListener
+import mx.ipn.escom.app_plantas_iswm.databinding.SignupScreenBinding
 import java.util.regex.Pattern
 
 
 class RegistrarUsuario : AppCompatActivity(), View.OnClickListener{
 
-    private val binding: P3bSignUpBinding by lazy{
-        DataBindingUtil.setContentView(this,R.layout.p3b_sign_up)
+    private val binding: SignupScreenBinding by lazy{
+        DataBindingUtil.setContentView(this,R.layout.signup_screen)
     }
     
     override fun onCreate(savedInstanceState: Bundle?) {

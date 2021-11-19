@@ -14,7 +14,6 @@ Data Binding, ambos xmlns se adjuntan debajo de la etiqueta layout-->
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="16dp"
             android:drawableEnd="@android:drawable/ic_menu_search"
             android:drawableTint="@color/black"
             android:ems="10"
@@ -30,7 +29,7 @@ Data Binding, ambos xmlns se adjuntan debajo de la etiqueta layout-->
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="sans-serif-black"
             android:text="Todas las Plantas"
             android:textColor="@color/plantName"
@@ -56,19 +55,23 @@ Data Binding, ambos xmlns se adjuntan debajo de la etiqueta layout-->
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Bienvenido"
+            android:text="Tus Plantas"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/floatingActionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:clickable="true"
             android:onClick="goToRegisterPlants"
+            android:text="Agregar Planta"
+            android:textAlignment="center"
             app:backgroundTint="@color/colorPrimaryButton"
+
+            app:icon="@android:drawable/ic_input_add"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

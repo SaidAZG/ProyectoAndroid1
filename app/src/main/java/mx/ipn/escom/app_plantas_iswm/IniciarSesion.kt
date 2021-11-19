@@ -41,19 +41,26 @@ class IniciarSesion : AppCompatActivity() {
     }
 
     fun loginUser(view: android.view.View) {
+        val prefM = PreferenceManager
         val db: FirebaseFirestore = FirebaseFirestore.getInstance()
         val mail: String = binding.userMail.text.toString()
         val pass: String = binding.userPass.text.toString()
+        prefM.initialize(this)
 
         db.collection("users").whereEqualTo("mail",mail).whereEqualTo("pass",pass)
             .get()
             .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
+                if (task.isSuccessful){
                     if (task.result!!.documents.isNotEmpty()){
-                        var id: String = task.result!!.documents[0].id
-                        Toast.makeText(this,"Bienvenido",Toast.LENGTH_SHORT).show()
+
+                        //Inicializamos la variable de sesion
+                            prefM.saveStatus(true)
+                        //Asignamos la lalve identificador del usuario
+                            var id: String = task.result!!.documents[0].id
+                            prefM.saveUserID(id)
+
+                        Toast.makeText(this, "Bienvenido $id",Toast.LENGTH_SHORT).show()
                         var intent: Intent = Intent(this,ConsultarPlantas::class.java)
-                        intent.putExtra("id",id)
                         //TODO [
                         //  Ahora en lugar de pasar la variable de sesion como un objeto en los intent ahora hay que utilizar la variable de sesion en los sharedPreferences
                         //  En el splashActivity validar la variable de sesión para escoger la actividad de destino del usuario

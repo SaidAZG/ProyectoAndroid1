@@ -4,6 +4,7 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.util.Log.v
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
@@ -15,6 +16,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import mx.ipn.escom.app_plantas_iswm.databinding.P5ConsultarplantasBinding
 import java.io.Serializable
 import java.util.*
+import android.util.Log.wtf as wtf1
 
 class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick {
     val db: FirebaseFirestore = FirebaseFirestore.getInstance()
@@ -26,9 +28,12 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val prefM = PreferenceManager
+        prefM.initialize(this)
         super.onCreate(savedInstanceState)
         //Variable de Sesion
-        var id: String = this.intent.extras?.getString("id").toString()
+        val id: String? = prefM.getUserID()
+        Log.d(TAG,"------------------------------------ $id")
 
         //ClickListeners
         binding.ETPlantSearch.setOnEditorActionListener { v, actionId, event ->
@@ -40,25 +45,7 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
         iniciarRecyclerView(id)
     }
 
-    override fun onResume() {
-        //TODO [
-        //  Solucionar error de navegar al padre y que haga la cosa rara
-        // ].
-        super.onResume()
-        //Variable de Sesion
-        var id: String = this.intent.extras?.getString("id").toString()
-
-        //ClickListeners
-        binding.ETPlantSearch.setOnEditorActionListener { v, actionId, event ->
-            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                return@setOnEditorActionListener true
-            }
-            return@setOnEditorActionListener false
-        }
-        iniciarRecyclerView(id)
-    }
-
-    private fun iniciarRecyclerView(id: String) {
+    private fun iniciarRecyclerView(id: String?) {
         binding.RVConsults.layoutManager = LinearLayoutManager(this)
         adapter = AdapterPlantas(this)
         binding.RVConsults.adapter = adapter
@@ -91,7 +78,6 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
                 }
             }
     }
-
 
     override fun onClick(v: View) {}
 

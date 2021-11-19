@@ -38,14 +38,14 @@ Data Binding, ambos xmlns se adjuntan debajo de la etiqueta layout-->
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RV_Consults"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="42dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/ET_PlantSearch"
+            app:layout_constraintStart_toStartOf="@+id/ET_PlantSearch"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
             tools:listitem="@layout/itemlist_p5_consultarplantas" />
 

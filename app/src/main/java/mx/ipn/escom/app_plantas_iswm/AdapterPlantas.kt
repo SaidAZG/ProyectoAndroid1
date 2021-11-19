@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.card.MaterialCardView
 
 class AdapterPlantas(private val listener: ConsultarPlantas) :
     ListAdapter<ConsultarPlantas.DtoPlanta, AdapterPlantas.ViewHolderDatos>(PlantasDiffUtil()) {
@@ -22,8 +23,6 @@ class AdapterPlantas(private val listener: ConsultarPlantas) :
     override fun onBindViewHolder(holder: ViewHolderDatos, position: Int) {
         val dto: ConsultarPlantas.DtoPlanta = currentList[position]
         holder.plantName.text = dto.nombrePlanta
-        holder.edit.setOnClickListener { listener.editarPlanta(dto) }
-        holder.delete.setOnClickListener { listener.eliminarPlanta(dto) }
         holder.seeMore.setOnClickListener { listener.seeMore(dto) }
     }
 
@@ -33,9 +32,7 @@ class AdapterPlantas(private val listener: ConsultarPlantas) :
 
     inner class ViewHolderDatos(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var plantName: TextView = itemView.findViewById<View>(R.id.plantName) as TextView
-        var delete: ImageButton = itemView.findViewById<View>(R.id.delete) as ImageButton
-        var edit: ImageButton = itemView.findViewById<View>(R.id.edit) as ImageButton
-        var seeMore: TextView = itemView.findViewById<View>(R.id.seeMore) as TextView
+        var seeMore: MaterialCardView = itemView.findViewById<View>(R.id.cardView) as MaterialCardView
     }
 }
 

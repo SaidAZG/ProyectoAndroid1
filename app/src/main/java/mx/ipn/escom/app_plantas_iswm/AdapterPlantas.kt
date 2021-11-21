@@ -22,7 +22,7 @@ class AdapterPlantas(private val listener: ConsultarPlantas) :
     override fun onBindViewHolder(holder: ViewHolderDatos, position: Int) {
         val dto: ConsultarPlantas.DtoPlanta = currentList[position]
         holder.plantName.text = dto.nombrePlanta
-        holder.registerDate.text = dto.fechaRegistro
+        holder.registerDate.text = ("Fecha Registro: "+ dto.fechaRegistro)
         holder.seeMore.setOnClickListener { listener.seeMore(dto) }
     }
 

@@ -31,37 +31,48 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/plantName"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:text="Nombre Planta"
-                    android:textColor="@color/plantName"
-                    android:textSize="24dp" />
+                    android:layout_weight="4"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/plantName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="Nombre Planta"
+                        android:textColor="@color/plantName"
+                        android:textSize="24dp" />
+
+                    <TextView
+                        android:id="@+id/registerDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="fecha de registro" />
+
+                </LinearLayout>
 
                 <TextView
-                    android:id="@+id/registerDate"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/seeMore"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginHorizontal="8dp"
-                    android:gravity="center_vertical"
-                    android:text="fecha de registro" />
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text="Ver Mas"
+                    android:textColor="@color/seeMore" />
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/seeMore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/montserrat"
-                android:text="Ver Mas"
-                android:textColor="@color/seeMore" />
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>

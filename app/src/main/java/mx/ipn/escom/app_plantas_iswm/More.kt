@@ -40,7 +40,6 @@ class More : AppCompatActivity() {
         val dto:ConsultarPlantas.DtoPlanta = this.intent.extras?.get("dto") as ConsultarPlantas.DtoPlanta
         var intent: Intent = Intent(this,RegistrarPlanta::class.java)
         intent.putExtra("dto",dto)
-        intent.putExtra("id",dto.usuario)
         intent.putExtra("back","P")
         startActivity(intent)
         finish()

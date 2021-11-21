@@ -220,12 +220,10 @@ class RegistrarPlanta : AppCompatActivity() {
         return makeDateString(day, month, year)
     }
 
-
     private fun makeDateString(day: Int, month: Int, year: Int): String? {
         return "$day/$month/$year"
     }
 
-    @SuppressLint("SetTextI18n")
     fun openDatePicker(view: View?) {
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)

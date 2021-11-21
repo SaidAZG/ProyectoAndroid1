@@ -61,6 +61,7 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
                             dto.especie = document.data["species"].toString()
                             dto.subespecie = document.data["subspecies"].toString()
                             dto.fechaPlantacion = document.data["datePlant"].toString()
+                            dto.fechaRegistro = document.data["registerDate"].toString()
                             dto.usuario = document.data["owner"].toString()
                             /*
                             dto.alto = document.data["height"].toString()
@@ -102,32 +103,11 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
         var usuario:String =""
     ) : Serializable
 
-    override fun editarPlanta(dtoPlanta: DtoPlanta) {
-        var intent: Intent = Intent(this,RegistrarPlanta::class.java)
-        intent.putExtra("dto",dtoPlanta)
-        intent.putExtra("back","P")
-        startActivity(intent)
-    }
-
-    override fun eliminarPlanta(dtoPlanta: DtoPlanta) {
-        val db: FirebaseFirestore = FirebaseFirestore.getInstance()
-        db.collection("plants").document(dtoPlanta.idDocument)
-            .delete()
-            .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully deleted!")
-                Toast.makeText(this,"Planta Eliminada :", Toast.LENGTH_LONG).show()}
-            .addOnFailureListener { e -> Log.w(TAG, "Error deleting document", e) }
-        var intent: Intent = Intent(this,ConsultarPlantas::class.java)
-        intent.putExtra("dto",dtoPlanta)
-        startActivity(intent)
-        finish()
-    }
-
     override fun seeMore(dtoPlanta: DtoPlanta) {
         var intent: Intent = Intent(this,More::class.java)
         intent.putExtra("dto",dtoPlanta)
         intent.putExtra("id",dtoPlanta.usuario)
         startActivity(intent)
-        finish()
     }
 
     fun goToRegisterPlants(view: android.view.View) {

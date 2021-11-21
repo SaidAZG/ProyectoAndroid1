@@ -2,38 +2,43 @@
 
     <style name="Theme.App_Plantas_ISWM" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/colorPrimaryButton</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
-
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
     </style>
+
     <style name="TextInputs">
         <item name="android:paddingLeft">16dp</item>
         <item name="background">@drawable/border_text</item>
         <item name="android:layout_height">48dp</item>
     </style>
+
     <style name="Headers">
         <item name="fontFamily">@font/montserrat_bold</item>
         <item name="android:textSize">35sp</item>
         <item name="android:textColor">@color/signIn</item>
     </style>
+
     <style name="headerSubtitle">
         <item name="android:textColor">@color/signIn</item>
         <item name="fontFamily">@font/inder</item>
         <item name="android:textSize">18dp</item>
     </style>
+
     <style name="button">
         <item name="backgroundTint">#D4E7E6</item>
         <item name="android:textColor">#0A0909</item>
         <item name="fontFamily">@font/roboto</item>
         <item name="android:textSize">16dp</item>
     </style>
+
     <style name="bottomOptions">
         <item name="fontFamily">@font/roboto</item>
         <item name="android:textColor">#2B4017</item>
         <item name="android:textSize">13dp</item>
     </style>
+
     <style name="Theme.App" parent="Theme.MaterialComponents.DayNight">
         <item name="android:windowTranslucentStatus">true</item>
     </style>

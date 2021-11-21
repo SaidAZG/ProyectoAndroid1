@@ -64,7 +64,7 @@ Data Binding, ambos xmlns se adjuntan debajo de la etiqueta layout-->
             android:id="@+id/floatingActionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="24dp"
             android:clickable="true"
             android:onClick="goToRegisterPlants"
             android:text="Agregar Planta"

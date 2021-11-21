@@ -22,6 +22,7 @@ class AdapterPlantas(private val listener: ConsultarPlantas) :
     override fun onBindViewHolder(holder: ViewHolderDatos, position: Int) {
         val dto: ConsultarPlantas.DtoPlanta = currentList[position]
         holder.plantName.text = dto.nombrePlanta
+        holder.registerDate.text = dto.fechaRegistro
         holder.seeMore.setOnClickListener { listener.seeMore(dto) }
     }
 
@@ -31,6 +32,7 @@ class AdapterPlantas(private val listener: ConsultarPlantas) :
 
     inner class ViewHolderDatos(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var plantName: TextView = itemView.findViewById<View>(R.id.plantName) as TextView
+        var registerDate: TextView = itemView.findViewById<View>(R.id.registerDate) as TextView
         var seeMore: MaterialCardView = itemView.findViewById<View>(R.id.cardView) as MaterialCardView
     }
 }

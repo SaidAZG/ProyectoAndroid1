@@ -59,13 +59,18 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
                             dto.idDocument = document.id
                             dto.nombrePlanta = document.data["commonName"].toString()
                             dto.especie = document.data["species"].toString()
-                            dto.dimensiones = document.data["dimention"].toString()
+                            dto.subespecie = document.data["subspecies"].toString()
                             dto.fechaPlantacion = document.data["datePlant"].toString()
+                            dto.usuario = document.data["owner"].toString()
+                            /*
+                            dto.alto = document.data["height"].toString()
+                            dto.ancho = document.data["width"].toString()
+                            dto.largo = document.data["length"].toString()
                             dto.lugarPlantacion = document.data["plantPlace"].toString()
                             dto.temporadaPlantacion = document.data["seasonPlant"].toString()
                             dto.exposicionLuz = document.data["lightExposure"].toString()
                             dto.tiempoExposicion = document.data["lightTime"].toString()
-                            dto.usuario = document.data["owner"].toString()
+                            */
                             listDatos.add(dto)
                         }
                         adapter.submitList(listDatos)
@@ -82,19 +87,24 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
         var idDocument: String = "",
         var nombrePlanta: String = "",
         var especie:String = "",
-        var dimensiones :String = "",
+        var subespecie:String = "",
         var fechaPlantacion :String = "",
+        var fechaRegistro :String = "",
+        /*
+        var alto :String = "",
+        var ancho :String = "",
+        var largo :String = "",
         var lugarPlantacion:String = "",
         var temporadaPlantacion:String = "",
         var exposicionLuz:String = "",
         var tiempoExposicion:String = "",
+        */
         var usuario:String =""
     ) : Serializable
 
     override fun editarPlanta(dtoPlanta: DtoPlanta) {
         var intent: Intent = Intent(this,RegistrarPlanta::class.java)
         intent.putExtra("dto",dtoPlanta)
-        intent.putExtra("id",dtoPlanta.usuario)
         intent.putExtra("back","P")
         startActivity(intent)
     }
@@ -108,7 +118,6 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
             .addOnFailureListener { e -> Log.w(TAG, "Error deleting document", e) }
         var intent: Intent = Intent(this,ConsultarPlantas::class.java)
         intent.putExtra("dto",dtoPlanta)
-        intent.putExtra("id",dtoPlanta.usuario)
         startActivity(intent)
         finish()
     }

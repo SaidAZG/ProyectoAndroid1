@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView9"
+        style="@style/Headers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Registro de Plantas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/id_btnadd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView11"
+                style="@style/headerSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dimensiones de la Planta"
+                android:textAlignment="center"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/d1"
+                    style="@style/TextInputs"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_text"
+                    android:ems="10"
+                    android:hint="alto (cm)"
+                    android:inputType="number"
+                    android:maxLength="3" />
+
+                <EditText
+                    android:id="@+id/d2"
+                    style="@style/TextInputs"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_text"
+                    android:ems="10"
+                    android:hint="ancho (cm)"
+                    android:inputType="number"
+                    android:maxLength="2" />
+
+                <EditText
+                    android:id="@+id/d3"
+                    style="@style/TextInputs"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_text"
+                    android:ems="10"
+                    android:hint="largo (cm)"
+                    android:inputType="number"
+                    android:maxLength="2" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView10"
+                style="@style/headerSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Lugar de plantación"
+                android:textAlignment="center"
+                android:textSize="18dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioGroup
+                    android:id="@+id/rbg1"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/Jardin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonClicked"
+                        android:tag="Jardín"
+                        android:text="Jardín"
+                        android:textColorLink="@color/purple_200" />
+
+                    <RadioButton
+                        android:id="@+id/Maceta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:onClick="onRadioButtonClicked"
+                        android:tag="Maceta"
+                        android:text="Maceta"
+                        android:textColorLink="@color/purple_200" />
+
+                    <RadioButton
+                        android:id="@+id/Jardinera"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="onRadioButtonClicked"
+                        android:tag="Jardinera"
+                        android:text="Jardinera"
+                        android:textColorLink="@color/purple_200" />
+
+                </RadioGroup>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView7"
+                style="@style/headerSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Exposición a la Luz"
+                android:textAlignment="center"
+                android:textSize="18dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioGroup
+                    android:id="@+id/rbg2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <RadioButton
+                        android:id="@+id/Sol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonClicked"
+                        android:tag="Sol"
+                        android:text="Sol"
+                        android:textColorLink="@color/purple_200" />
+
+                    <RadioButton
+                        android:id="@+id/Sombra"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:onClick="onRadioButtonClicked"
+                        android:tag="Sombra"
+                        android:text="Sombra"
+                        android:textColorLink="@color/purple_200" />
+
+                    <RadioButton
+                        android:id="@+id/Resolana"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="onRadioButtonClicked"
+                        android:tag="Resolana"
+                        android:text="Resolana"
+                        android:textColorLink="@color/purple_200" />
+
+                </RadioGroup>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <EditText
+                android:id="@+id/tExposicion"
+                style="@style/TextInputs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:ems="10"
+                android:hint="Tiempo de Exposición (hrs)"
+                android:inputType="time"
+                android:maxLength="2" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    style="@style/headerSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Área de colocación"
+                    android:textSize="18dp" />
+
+                <Spinner
+                    android:id="@+id/temporadaPlantacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/seeMore" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/headerSubtitle"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estado de las hojas" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:backgroundTint="@color/colorPrimaryButton"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/grow_it_2" />
+
+                <ImageButton
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:backgroundTint="@color/colorPrimaryButton"
+                    android:focusableInTouchMode="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/grow_it_2" />
+
+                <ImageButton
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:backgroundTint="@color/colorPrimaryButton"
+                    android:focusableInTouchMode="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/grow_it_2" />
+
+                <ImageButton
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:backgroundTint="@color/colorPrimaryButton"
+                    android:focusableInTouchMode="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/grow_it_2" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/id_btnadd"
+        style="@style/button"
+        android:layout_width="215dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_rounded"
+        android:onClick="registrarPlanta"
+        android:text="Agregar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

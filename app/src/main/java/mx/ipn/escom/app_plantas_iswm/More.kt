@@ -24,13 +24,16 @@ class More : AppCompatActivity() {
         val dto:ConsultarPlantas.DtoPlanta = this.intent.extras?.get("dto") as ConsultarPlantas.DtoPlanta
         binding.plantName.text = dto.nombrePlanta
         binding.especie.text = dto.especie
-        binding.dimensiones.text = dto.dimensiones
+        binding.subespecie.text = dto.subespecie
         binding.fecha.text = dto.fechaPlantacion
+        binding.fechaRegistro.text = dto.fechaRegistro
+        /*
+        binding.dimensiones.text = (dto.alto+"cm. x "+dto.ancho+"cm. x "+dto.largo)
         binding.lugar.text = dto.lugarPlantacion
         binding.temporada.text = dto.temporadaPlantacion
         binding.exposicion.text = dto.exposicionLuz
         binding.tiempoExposicion.text = dto.tiempoExposicion
-
+        */
     }
 
     fun editPlant(view: android.view.View) {
@@ -42,6 +45,7 @@ class More : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
+
     fun deletePlant(view: android.view.View) {
         val db: FirebaseFirestore = FirebaseFirestore.getInstance()
         val dto:ConsultarPlantas.DtoPlanta = this.intent.extras?.get("dto") as ConsultarPlantas.DtoPlanta
@@ -50,5 +54,9 @@ class More : AppCompatActivity() {
             .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully deleted!")
             Toast.makeText(this,"Planta Eliminada :",Toast.LENGTH_LONG).show()}
             .addOnFailureListener { e -> Log.w(TAG, "Error deleting document", e) }
+        var intent: Intent = Intent(this,ConsultarPlantas::class.java)
+        intent.putExtra("dto",dto)
+        startActivity(intent)
+        finish()
     }
 }

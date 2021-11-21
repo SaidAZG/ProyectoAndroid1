@@ -14,7 +14,6 @@ class Menu : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-            //supportActionBar?.hide()
             binding.topAppBar.setNavigationOnClickListener {
             binding.drawerLayout.openDrawer(findViewById(R.id.navigation_view),true)
         }

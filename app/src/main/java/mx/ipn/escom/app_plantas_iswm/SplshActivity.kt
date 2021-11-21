@@ -13,13 +13,6 @@ class SplashActivity : AppCompatActivity() {
         redirect()
     }
 
-    override fun onResume() {
-        super.onResume()
-        supportActionBar?.hide()
-        setContentView(R.layout.splash_screen)
-        redirect()
-    }
-
     private fun redirect(){
         val prefM = PreferenceManager
         val tutorialKey = "NEW"

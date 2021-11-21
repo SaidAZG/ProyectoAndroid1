@@ -7,155 +7,130 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hola" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fotos" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registros" />
+        </com.google.android.material.tabs.TabLayout>
+
         <TextView
             android:id="@+id/plantName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/montserrat_bold"
             android:text="Nombre Planta"
             android:textColor="@color/plantName"
             android:textSize="25dp"
-            app:layout_constraintStart_toStartOf="@+id/cardView2"
-            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView2"
-            android:layout_width="0dp"
-            android:layout_height="230dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            app:cardCornerRadius="40dp"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:scaleType="center"
-                tools:srcCompat="@tools:sample/backgrounds/scenic" />
-        </androidx.cardview.widget.CardView>
-
-        <ScrollView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/delete"
-            app:layout_constraintEnd_toEndOf="@+id/cardView2"
-            app:layout_constraintStart_toStartOf="@+id/plantName"
             app:layout_constraintTop_toBottomOf="@+id/plantName">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/especie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_marginTop="8dp"
+                android:text="Especie"
+                android:textColor="@color/plantName"
+                android:textSize="25dp" />
 
-                <TextView
-                    android:id="@+id/especie"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:drawableLeft="@android:drawable/ic_menu_gallery"
-                    android:drawableTint="@color/iconsTint"
-                    android:text="Especie"
-                    android:textColor="@color/plantAttribute"
-                    android:textSize="25dp" />
+            <TextView
+                android:id="@+id/subespecie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Sub-Especie"
+                android:textColor="@color/plantName"
+                android:textSize="25dp" />
 
-                <TextView
-                    android:id="@+id/dimensiones"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:drawableLeft="@android:drawable/ic_menu_gallery"
-                    android:drawableTint="@color/iconsTint"
-                    android:text="Dimensiones"
-                    android:textColor="@color/plantAttribute"
-                    android:textSize="25dp" />
+            <TextView
+                android:id="@+id/fecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Fecha de Plantación"
+                android:textColor="@color/plantName"
+                android:textSize="25dp" />
 
-                <TextView
-                    android:id="@+id/fecha"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:drawableLeft="@android:drawable/ic_menu_gallery"
-                    android:drawableTint="@color/iconsTint"
-                    android:text="Fecha de Plantación"
-                    android:textColor="@color/plantAttribute"
-                    android:textSize="25dp" />
+            <TextView
+                android:id="@+id/fechaRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Fecha de Registro"
+                android:textColor="@color/plantName"
+                android:textSize="25dp" />
 
-                <TextView
-                    android:id="@+id/lugar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:drawableLeft="@android:drawable/ic_menu_gallery"
-                    android:drawableTint="@color/iconsTint"
-                    android:text="Lugar de Plantación"
-                    android:textColor="@color/plantAttribute"
-                    android:textSize="25dp" />
+        </LinearLayout>
 
-                <TextView
-                    android:id="@+id/temporada"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:drawableLeft="@android:drawable/ic_menu_gallery"
-                    android:drawableTint="@color/iconsTint"
-                    android:text="Temporada de Plantación"
-                    android:textColor="@color/plantAttribute"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:id="@+id/exposicion"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:drawableLeft="@android:drawable/ic_menu_gallery"
-                    android:drawableTint="@color/iconsTint"
-                    android:text="Exposición a la Luz"
-                    android:textColor="@color/plantAttribute"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:id="@+id/tiempoExposicion"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:drawableLeft="@android:drawable/ic_menu_gallery"
-                    android:drawableTint="@color/iconsTint"
-                    android:text="Tiempo de Exposición a la Luz"
-                    android:textColor="@color/plantAttribute"
-                    android:textSize="25dp" />
-
-            </LinearLayout>
-        </ScrollView>
-
-        <ImageButton
-            android:id="@+id/delete"
-            android:onClick="deletePlant"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="24dp"
-            android:backgroundTint="#FFFFFF"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@android:drawable/ic_menu_delete" />
+            app:layout_constraintStart_toStartOf="parent">
 
-        <ImageButton
-            android:id="@+id/edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FFFFFF"
-            android:onClick="editPlant"
-            app:layout_constraintBottom_toBottomOf="@+id/delete"
-            app:layout_constraintEnd_toStartOf="@+id/delete"
-            app:layout_constraintTop_toTopOf="@+id/delete"
-            app:srcCompat="@android:drawable/ic_menu_edit" />
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:onClick="deletePlant"
+                android:text="Eliminar"
+                android:textAlignment="center"
+                app:backgroundTint="@color/colorPrimaryBorder" />
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:onClick="editPlant"
+                android:text="Editar"
+                android:textAlignment="center"
+                app:backgroundTint="@color/colorPrimaryButton" />
+        </LinearLayout>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

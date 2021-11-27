@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.google.android.material.tabs.TabLayout
 import com.google.firebase.firestore.FirebaseFirestore
 import mx.ipn.escom.app_plantas_iswm.databinding.PlantDetailsBinding
 
@@ -34,6 +35,20 @@ class More : AppCompatActivity() {
         binding.exposicion.text = dto.exposicionLuz
         binding.tiempoExposicion.text = dto.tiempoExposicion
         */
+        binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                // Handle tab select
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+                // Handle tab reselect
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+                // Handle tab unselect
+            }
+        })
     }
 
     fun editPlant(view: android.view.View) {

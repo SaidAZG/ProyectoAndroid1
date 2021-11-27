@@ -29,4 +29,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         startActivity(intent)
         finish()
     }
+    //TODO [Definir datos de registro de áreas
+//          Datos de especie y subespecie para registro de planta opcionales, subir a la base como no definido
+//          Agregar success dialogs en registros (areas, plantas, cuidados)
+//          ]
 }

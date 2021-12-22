@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        xmlns:tools="http://schemas.android.com/tools">
+        android:layout_height="match_parent">
         <androidx.drawerlayout.widget.DrawerLayout
             android:id="@+id/drawerLayout"
             android:layout_width="match_parent"
@@ -26,8 +26,9 @@
                         android:id="@+id/topAppBar"
                         android:layout_width="match_parent"
                         android:layout_height="?attr/actionBarSize"
-                        app:title="Barra Superior"
-                        app:navigationIcon="@android:drawable/ic_menu_myplaces"
+                        app:title="@string/app_name"
+                        app:titleTextColor="@color/white"
+                        app:navigationIcon="@drawable/round_menu"
                         style="@style/Widget.MaterialComponents.Toolbar.PrimarySurface"
                         android:background="@android:color/transparent"
                         android:elevation="0dp"

@@ -43,14 +43,14 @@ class IniciarSesion : AppCompatActivity() {
 
                         //Inicializamos la variable de sesion
                             prefM.saveStatus(true)
-                        //Asignamos la lalve identificador del usuario
+                        //Asignamos la llave identificador del usuario
                             var id: String = task.result!!.documents[0].id
                             var name: String = task.result!!.documents[0]["name"].toString() + " " + task.result!!.documents[0]["last"].toString()
                             prefM.saveUserID(id)
                             prefM.saveName(name)
 
-                        Toast.makeText(this, "Bienvenido $id",Toast.LENGTH_SHORT).show()
-                        var intent: Intent = Intent(this,ConsultarPlantas::class.java)
+                        Toast.makeText(this, "Bienvenido $name",Toast.LENGTH_SHORT).show()
+                        var intent: Intent = Intent(this,Menu::class.java)
                         //TODO [
                         //  Ahora en lugar de pasar la variable de sesion como un objeto en los intent ahora hay que utilizar la variable de sesion en los sharedPreferences
                         //  En el splashActivity validar la variable de sesión para escoger la actividad de destino del usuario

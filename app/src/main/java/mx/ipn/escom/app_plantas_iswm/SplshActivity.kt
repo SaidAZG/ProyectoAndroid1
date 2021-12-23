@@ -28,11 +28,13 @@ class SplashActivity : AppCompatActivity() {
             }else{
                 //Validar si ya hay una sesion activa
                     if (!prefM.getStatus()){
+                        //Si no hay una sesion activa redirige al usuario al inicio de sesion
                         val intent = Intent(this@SplashActivity, IniciarSesion::class.java)
                         startActivity(intent)
                         finish()
                     }else{
-                        val intent = Intent(this@SplashActivity, ConsultarPlantas::class.java)
+                        //Si hay una sesion activa redirige al usuario al menu principal
+                        val intent = Intent(this@SplashActivity, Menu::class.java)
                         startActivity(intent)
                         finish()
                     }

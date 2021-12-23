@@ -24,6 +24,6 @@
         style="@style/headerSubtitle"
         android:textAppearance="?attr/textAppearanceBody2"
         android:textColor="@color/material_on_surface_emphasis_medium"
-        android:text="Nombre de Usuario" />
+        android:text="@string/userName" />
 
 </LinearLayout>

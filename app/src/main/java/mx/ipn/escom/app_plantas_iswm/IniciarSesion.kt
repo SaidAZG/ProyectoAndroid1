@@ -45,7 +45,9 @@ class IniciarSesion : AppCompatActivity() {
                             prefM.saveStatus(true)
                         //Asignamos la lalve identificador del usuario
                             var id: String = task.result!!.documents[0].id
+                            var name: String = task.result!!.documents[0]["name"].toString() + " " + task.result!!.documents[0]["last"].toString()
                             prefM.saveUserID(id)
+                            prefM.saveName(name)
 
                         Toast.makeText(this, "Bienvenido $id",Toast.LENGTH_SHORT).show()
                         var intent: Intent = Intent(this,ConsultarPlantas::class.java)

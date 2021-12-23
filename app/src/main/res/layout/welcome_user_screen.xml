@@ -29,7 +29,7 @@
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/roboto"
@@ -37,7 +37,7 @@
             android:shadowDx="0"
             android:shadowDy="4"
             android:shadowRadius="5"
-            android:text="cuida las plantas por ella tienes oxigeno"
+            android:text="Cuida las plantas por ella tienes oxigeno"
             android:textColor="#F6F6F6"
             android:textSize="22sp"
             android:textStyle="normal"

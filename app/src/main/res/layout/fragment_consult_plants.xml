@@ -10,7 +10,7 @@ Data Binding, ambos xmlns se adjuntan debajo de la etiqueta layout-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".ui.home.HomeFragment">
+            tools:context=".ui.PlantsFragment">
 
             <EditText
                 android:id="@+id/ET_PlantSearch"

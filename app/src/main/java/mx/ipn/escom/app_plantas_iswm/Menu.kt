@@ -32,7 +32,7 @@ class Menu : AppCompatActivity(){
         prefM.initialize(this)
 
         super.onCreate(savedInstanceState)
-        actionBar?.hide()
+        //actionBar?.hide()
         setSupportActionBar(binding.topAppBar)
 
 
@@ -42,50 +42,41 @@ class Menu : AppCompatActivity(){
         val navController = findNavController(R.id.nav_host_fragment_container)
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.plantsFragment, R.id.areas, R.id.out
+                R.id.plantsFragment, R.id.areasFragment
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+        //Agregar el nombre del usuario para el menu lateral
+        binding.navigationView.getHeaderView(0).findViewById<TextView>(R.id.menu_userName).text =
+            PreferenceManager.getName()
+
         //Codigo semi-improvisado
         binding.topAppBar.setNavigationOnClickListener {
             binding.drawerLayout.openDrawer(findViewById(R.id.navigation_view), true)
         }
-        //Agregar el nombre del usuario para el menu lateral
-        binding.navigationView.getHeaderView(0).findViewById<TextView>(R.id.menu_userName).text =
-            PreferenceManager.getName()
-        // Handle menu item selected
+
+        //Handle menu item selected
         binding.navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.title) {
-                "Tus Plantas" -> handlerPlantas()
-                "Tus Areas" -> handlerAreas()
                 "Cerrar Sesión" -> logOut()
             }
-
             menuItem.isChecked = true
             binding.drawerLayout.closeDrawer(GravityCompat.START)
             true
         }
-
-        fun onCreateOptionsMenu(menu: Menu): Boolean {
-            // Inflate the menu; this adds items to the action bar if it is present.
-            menuInflater.inflate(R.menu.navigation_drawer, menu)
-            return true
-        }
-
-        fun onSupportNavigateUp(): Boolean {
-            val navController = findNavController(R.id.nav_host_fragment_container)
-            return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
-        }
     }
 
-    fun handlerPlantas() {
-        Toast.makeText(this, "1", Toast.LENGTH_LONG).show()
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.navigation_drawer, menu)
+        return true
     }
 
-    fun handlerAreas() {
-        Toast.makeText(this, "2", Toast.LENGTH_LONG).show()
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment_container)
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
     fun logOut() {

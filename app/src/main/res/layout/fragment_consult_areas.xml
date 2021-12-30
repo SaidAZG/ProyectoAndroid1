@@ -4,13 +4,10 @@ Data Binding, ambos xmlns se adjuntan debajo de la etiqueta layout-->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".ui.home.HomeFragment">
+            tools:context=".ui.AreasFragment">
 
             <EditText
                 android:id="@+id/ET_PlantSearch"
@@ -80,5 +77,4 @@ Data Binding, ambos xmlns se adjuntan debajo de la etiqueta layout-->
                 app:srcCompat="@android:drawable/ic_menu_add" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </RelativeLayout>
 </layout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/plantsFragment">
+    <fragment
+        android:id="@+id/plantsFragment"
+        android:name="mx.ipn.escom.app_plantas_iswm.ui.PlantsFragment"
+        android:label="fragment_plants"
+        tools:layout="@layout/fragment_consult_plants" />
+</navigation>

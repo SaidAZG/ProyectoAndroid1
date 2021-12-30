@@ -6,17 +6,24 @@ android:id="@+id/group1"
 android:checkableBehavior="single">
 <item
     android:id="@+id/plants"
-    android:icon="@drawable/grow_it_2"
+    android:icon="@drawable/sharp_grass"
     android:title="Tus Plantas"
     android:checked="true" />
 <item
     android:id="@+id/areas"
-    android:icon="@drawable/grow_it_2"
+    android:icon="@drawable/sharp_foundation"
     android:title="Tus Areas" />
-<item
-    android:id="@+id/out"
-    android:icon="@android:drawable/ic_menu_close_clear_cancel"
-    android:title="Cerrar Sesión" />
-</group>
 
+</group>
+    <view
+        android:layout_width="1dp"
+        android:layout_height="match_parent"/>
+<group
+    android:id="@+id/group2"
+    android:checkableBehavior="single">
+    <item
+        android:id="@+id/out"
+        android:icon="@drawable/sharp_logout"
+        android:title="Cerrar Sesión" />
+</group>
 </menu>

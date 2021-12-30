@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import com.google.android.material.tabs.TabLayout
 import com.google.firebase.firestore.FirebaseFirestore
 import mx.ipn.escom.app_plantas_iswm.databinding.PlantDetailsBinding
+import mx.ipn.escom.app_plantas_iswm.dto.DtoPlanta
 
 class More : AppCompatActivity() {
     private val binding: PlantDetailsBinding by lazy {
@@ -19,10 +20,10 @@ class More : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //Activar la barra de navegacion superior
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        //supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         //Objeto Planta Seleccionado
-        val dto:ConsultarPlantas.DtoPlanta = this.intent.extras?.get("dto") as ConsultarPlantas.DtoPlanta
+        val dto:DtoPlanta = this.intent.extras?.get("dto") as DtoPlanta
         binding.plantName.text = dto.nombrePlanta
         binding.especie.text = dto.especie
         binding.subespecie.text = dto.subespecie
@@ -52,7 +53,7 @@ class More : AppCompatActivity() {
     }
 
     fun editPlant(view: android.view.View) {
-        val dto:ConsultarPlantas.DtoPlanta = this.intent.extras?.get("dto") as ConsultarPlantas.DtoPlanta
+        val dto: DtoPlanta = this.intent.extras?.get("dto") as DtoPlanta
         var intent: Intent = Intent(this,RegistrarPlanta::class.java)
         intent.putExtra("dto",dto)
         intent.putExtra("back","P")
@@ -62,13 +63,13 @@ class More : AppCompatActivity() {
 
     fun deletePlant(view: android.view.View) {
         val db: FirebaseFirestore = FirebaseFirestore.getInstance()
-        val dto:ConsultarPlantas.DtoPlanta = this.intent.extras?.get("dto") as ConsultarPlantas.DtoPlanta
+        val dto:DtoPlanta = this.intent.extras?.get("dto") as DtoPlanta
         db.collection("plants").document(dto.idDocument)
             .delete()
             .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully deleted!")
             Toast.makeText(this,"Planta Eliminada :",Toast.LENGTH_LONG).show()}
             .addOnFailureListener { e -> Log.w(TAG, "Error deleting document", e) }
-        var intent: Intent = Intent(this,ConsultarPlantas::class.java)
+        var intent: Intent = Intent(this,Menu::class.java)
         intent.putExtra("dto",dto)
         startActivity(intent)
         finish()

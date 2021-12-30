@@ -1,36 +1,38 @@
-package mx.ipn.escom.app_plantas_iswm
+package mx.ipn.escom.app_plantas_iswm.ui
 
-import android.content.ContentValues.TAG
+import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
-import mx.ipn.escom.app_plantas_iswm.databinding.ConsultPlantsBinding
-import java.io.Serializable
-import java.util.*
+import mx.ipn.escom.app_plantas_iswm.*
+import mx.ipn.escom.app_plantas_iswm.databinding.FragmentConsultPlantsBinding
+import mx.ipn.escom.app_plantas_iswm.dto.DtoAreas
+import mx.ipn.escom.app_plantas_iswm.dto.DtoPlanta
 
-class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick {
+class PlantsFragment : Fragment(), View.OnClickListener, OnItemClick {
     val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
     private lateinit var adapter: AdapterPlantas
 
-    private val binding: ConsultPlantsBinding by lazy {
-        DataBindingUtil.setContentView(this, R.layout.consult_plants)
+    private val binding: FragmentConsultPlantsBinding by lazy {
+        FragmentConsultPlantsBinding.inflate(layoutInflater)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreateView(inflater: LayoutInflater,
+                              container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val prefM = PreferenceManager
-        prefM.initialize(this)
-        super.onCreate(savedInstanceState)
+        PreferenceManager.initialize(requireContext())
+
         //Variable de Sesion
-        val id: String? = prefM.getUserID()
-        Log.d(TAG,"------------------------------------ $id")
+        val id: String? = PreferenceManager.getUserID()
+        Log.d(ContentValues.TAG,"------------------------------------ $id")
 
         //ClickListeners
         binding.ETPlantSearch.setOnEditorActionListener { v, actionId, event ->
@@ -39,11 +41,15 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
             }
             return@setOnEditorActionListener false
         }
+        binding.floatingActionButton.setOnClickListener{
+            goToRegisterPlants()
+        }
         iniciarRecyclerView(id)
+        return binding.root
     }
 
     private fun iniciarRecyclerView(id: String?) {
-        binding.RVConsults.layoutManager = LinearLayoutManager(this)
+        binding.RVConsults.layoutManager = LinearLayoutManager(requireContext())
         adapter = AdapterPlantas(this)
         binding.RVConsults.adapter = adapter
 
@@ -52,9 +58,9 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     if (task.result!!.documents.isNotEmpty()) {
-                        val listDatos = ArrayList<DtoPlanta>()
+                        val listDatos = mutableListOf<DtoPlanta>()
                         for (document in task.result!!) {
-                            Log.d(TAG, document.id + " => " + document.data)
+                            Log.d(ContentValues.TAG, document.id + " => " + document.data)
                             val dto = DtoPlanta()
                             dto.idDocument = document.id
                             dto.nombrePlanta = document.data["commonName"].toString()
@@ -77,44 +83,28 @@ class ConsultarPlantas : AppCompatActivity(), View.OnClickListener, OnItemClick 
                         adapter.submitList(listDatos)
                     }
                 } else {
-                    Log.w(TAG, "Error getting documents.", task.exception)
+                    Log.w(ContentValues.TAG, "Error getting documents.", task.exception)
                 }
             }
     }
 
     override fun onClick(v: View) {}
 
-    data class DtoPlanta(
-        var idDocument: String = "",
-        var nombrePlanta: String = "",
-        var especie:String = "",
-        var subespecie:String = "",
-        var fechaPlantacion :String = "",
-        var fechaRegistro :String = "",
-        /*
-        var alto :String = "",
-        var ancho :String = "",
-        var largo :String = "",
-        var lugarPlantacion:String = "",
-        var temporadaPlantacion:String = "",
-        var exposicionLuz:String = "",
-        var tiempoExposicion:String = "",
-        */
-        var usuario:String =""
-    ) : Serializable
-
     override fun seeMore(dtoPlanta: DtoPlanta) {
-        var intent: Intent = Intent(this,More::class.java)
+        var intent: Intent = Intent(requireContext(), More::class.java)
         intent.putExtra("dto",dtoPlanta)
-        intent.putExtra("id",dtoPlanta.usuario)
+        //intent.putExtra("id",dtoPlanta.usuario)
         startActivity(intent)
     }
 
-    fun goToRegisterPlants(view: android.view.View) {
-        var id: String = this.intent.extras?.getString("id").toString()
-        var intent: Intent = Intent(this,RegistrarPlanta::class.java)
-        intent.putExtra("id",id)
+    override fun seeMore(dtoAreas: DtoAreas) {
+        TODO("Not yet implemented")
+    }
+
+    fun goToRegisterPlants() {
+        var intent: Intent = Intent(requireContext(), RegistrarPlanta::class.java)
         intent.putExtra("back","M")
         startActivity(intent)
     }
+
 }

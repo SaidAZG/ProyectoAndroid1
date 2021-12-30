@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.firestore.FirebaseFirestore
 import mx.ipn.escom.app_plantas_iswm.databinding.AddPlantBinding
+import mx.ipn.escom.app_plantas_iswm.dto.DtoPlanta
 import java.util.*
 import javax.xml.datatype.DatatypeConstants.MONTHS
 
@@ -27,7 +28,7 @@ class RegistrarPlanta : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //Barra de navegacion superior
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        //supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         binding.root
 
         /*Datos de Spinner
@@ -45,16 +46,17 @@ class RegistrarPlanta : AppCompatActivity() {
         //Si viene de registrar muestra los campos vacios, si viene de editar rellena los campos como estan en la base de datos
         val back: String = this.intent.extras?.getString("back").toString()
         if(back == "P"){
-            val dto:ConsultarPlantas.DtoPlanta = this.intent.extras?.get("dto") as ConsultarPlantas.DtoPlanta
+            val dto:DtoPlanta = this.intent.extras?.get("dto") as DtoPlanta
             editarPlantas(dto)
         }
 
         binding.fPlantacion.text = getTodaysDate()
     }
 
-    private fun editarPlantas(dto: ConsultarPlantas.DtoPlanta) {
+    private fun editarPlantas(dto: DtoPlanta) {
         binding.nComun.setText(dto.nombrePlanta)
         binding.especie.setText(dto.especie)
+        binding.subespecie.setText(dto.subespecie)
         binding.fPlantacion.text = dto.fechaPlantacion
         binding.idBtnadd.text = "Actualizar"
         /*TODO [
@@ -168,7 +170,7 @@ class RegistrarPlanta : AppCompatActivity() {
         else{
             val back: String = this.intent.extras?.getString("back").toString()
             if(back == "P"){
-                val dto:ConsultarPlantas.DtoPlanta = this.intent.extras?.get("dto") as ConsultarPlantas.DtoPlanta
+                val dto:DtoPlanta = this.intent.extras?.get("dto") as DtoPlanta
                 db.collection("plants").document(dto.idDocument)
                     .update("commonName", map["commonName"].toString(),
                         "datePlant",map["datePlant"].toString(),
@@ -185,7 +187,7 @@ class RegistrarPlanta : AppCompatActivity() {
                         "owner",map["owner"].toString())
                     .addOnSuccessListener {
                         Log.d(TAG, "------------------"+dto.idDocument)
-                        val intent = Intent(this, ConsultarPlantas::class.java)
+                        val intent = Intent(this, Menu::class.java)
                         startActivity(intent)
                         Toast.makeText(this, "Planta Actualizada", Toast.LENGTH_SHORT).show()
                         finish()}
@@ -198,7 +200,7 @@ class RegistrarPlanta : AppCompatActivity() {
                             TAG,
                             "DocumentSnapshot added with ID: " + documentReference.id
                         )
-                        val intent = Intent(this, ConsultarPlantas::class.java)
+                        val intent = Intent(this, Menu::class.java)
                         startActivity(intent)
                         Toast.makeText(this, "Planta Registrada", Toast.LENGTH_SHORT).show()
                         finish()

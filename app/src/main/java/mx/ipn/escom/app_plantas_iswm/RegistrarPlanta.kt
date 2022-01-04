@@ -51,6 +51,9 @@ class RegistrarPlanta : AppCompatActivity() {
         }
 
         binding.fPlantacion.text = getTodaysDate()
+        binding.idBtnadd.setOnClickListener{
+            registrarPlanta()
+        }
     }
 
     private fun editarPlantas(dto: DtoPlanta) {
@@ -101,7 +104,7 @@ class RegistrarPlanta : AppCompatActivity() {
         */
     }
 
-    fun registrarPlanta(view: android.view.View) {
+    fun registrarPlanta() {
         val db: FirebaseFirestore = FirebaseFirestore.getInstance()
         val prefM = PreferenceManager
         prefM.initialize(this)

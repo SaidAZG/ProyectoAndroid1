@@ -22,18 +22,16 @@ class Menu : AppCompatActivity(){
 
     private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
     private lateinit var appBarConfiguration: AppBarConfiguration
-
-    private val binding: NavigationDrawerBinding by lazy {
-        DataBindingUtil.setContentView(this, R.layout.navigation_drawer)
-    }
+    private lateinit var binding: NavigationDrawerBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val prefM = PreferenceManager
         prefM.initialize(this)
 
         super.onCreate(savedInstanceState)
-        //actionBar?.hide()
-        setSupportActionBar(binding.topAppBar)
+        binding = NavigationDrawerBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
 
 
         //Codigo basado en proyecto
@@ -53,7 +51,7 @@ class Menu : AppCompatActivity(){
             PreferenceManager.getName()
 
         //Codigo semi-improvisado
-        binding.topAppBar.setNavigationOnClickListener {
+        binding.toolbar.setNavigationOnClickListener {
             binding.drawerLayout.openDrawer(findViewById(R.id.navigation_view), true)
         }
 

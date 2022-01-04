@@ -22,20 +22,13 @@
                     <com.google.android.material.appbar.AppBarLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/Widget.MaterialComponents.AppBarLayout.PrimarySurface"
-                        android:fitsSystemWindows="true">
+                        style="@style/Widget.MaterialComponents.AppBarLayout.PrimarySurface">
 
-                        <com.google.android.material.appbar.MaterialToolbar
-                            android:id="@+id/topAppBar"
+                        <androidx.appcompat.widget.Toolbar
+                            android:id="@+id/toolbar"
                             android:layout_width="match_parent"
                             android:layout_height="?attr/actionBarSize"
-                            app:title="@string/app_name"
-                            app:titleTextColor="@color/white"
-                            app:navigationIcon="@drawable/round_menu"
-                            style="@style/Widget.MaterialComponents.Toolbar.PrimarySurface"
-                            android:background="@android:color/transparent"
-                            android:elevation="0dp"
-                            app:titleCentered="true"/>
+                            android:background="?attr/colorPrimary"/>
 
                     </com.google.android.material.appbar.AppBarLayout>
 

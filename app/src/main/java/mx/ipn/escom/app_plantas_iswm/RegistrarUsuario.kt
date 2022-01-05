@@ -23,7 +23,7 @@ class RegistrarUsuario : AppCompatActivity(), View.OnClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //Barra de navegacion superior
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        //supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         binding.root
     }
     override fun onClick(v: View?) {
